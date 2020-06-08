@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchResultsContainer.css";
+import SearchResults from '../SearchResults/SearchResults'
 
 //function or class? hmm
 
@@ -18,7 +19,9 @@ const SearchResultsContainer = () => {
           <input type="checkbox" name="price" value="price" /> price
         </label>
       </aside>
-      <main className="all-search-results"></main>
+      <main className="all-search-results">
+        <SearchResults />
+      </main>
     </section>
   );
 };

@@ -1,0 +1,41 @@
+.specific-search-result {
+  border: 1px solid #c4c4c4;
+  padding: 2%;
+  height: 25%;
+}
+
+.search-result-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.name-and-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.star-rating {
+    object-fit: contain;
+}
+
+.search-results-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.company-image {
+    height: 150px;
+    width: 200px;
+    background-color: gray;
+    margin: 0;
+}
+
+.search-results-content > article {
+    margin-left: 3%;
+}

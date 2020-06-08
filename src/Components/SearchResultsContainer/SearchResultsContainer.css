@@ -1,7 +1,11 @@
 .search-results-container {
     width: 80%;
     margin: 2% auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
+
 
 .sort-by-box {
     display: flex;
@@ -19,4 +23,9 @@
 
 .sort-by-box > label {
     margin: 4% 0;
+}
+
+.all-search-results {
+    width: 70%;
+    margin: 2%;
 }
