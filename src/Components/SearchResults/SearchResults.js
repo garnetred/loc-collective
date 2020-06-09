@@ -30,6 +30,8 @@ const SearchResults = () => {
       </section>
     </section>
     //divide by 1609 to convert meters to miles
+    //must link yelp business page
+    //must also convert rating into an array, then check to see if the third value is a 0 or a 5
   );
 };
 

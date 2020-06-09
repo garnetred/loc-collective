@@ -1,10 +1,25 @@
 import React from "react";
 import "./SearchResultsContainer.css";
-import SearchResults from '../SearchResults/SearchResults'
+import SearchResults from "../SearchResults/SearchResults";
 
 //function or class? hmm
 
-const SearchResultsContainer = () => {
+const SearchResultsContainer = (props) => {
+  console.log(props);
+  const allSearchResults = props.results.map((salon) => {
+    return (
+      <SearchResults
+        key={salon.id}
+        name={salon.name}
+        image_url={salon.image_url}
+        url={salon.url}
+        review_count={salon.review_count}
+        distance={salon.distance}
+        rating={salon.rating}
+        price={salon.price}
+      />
+    );
+  });
   return (
     <section className="search-results-container">
       <aside className="sort-by-box">
@@ -20,10 +35,12 @@ const SearchResultsContainer = () => {
         </label>
       </aside>
       <main className="all-search-results">
-        <SearchResults />
+       {props.style && !props.results.length ? <p className="no-results">No results found. Please try a new search.</p> : null}
+       {props.style === undefined ? <SearchResults /> : allSearchResults}
       </main>
     </section>
   );
 };
+
 
 export default SearchResultsContainer;

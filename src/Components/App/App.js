@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, NavLink, Link, Switch, Router } from "react-router-dom";
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
-import SearchResultsContainer from '../SearchResultsContainer/SearchResultsContainer'
+import SearchResultsContainer from "../SearchResultsContainer/SearchResultsContainer";
 import "./App.css";
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       results: [],
-      searchTerm: ''
+      searchTerm: "",
     };
   }
 
@@ -42,13 +42,21 @@ class App extends Component {
         console.log(" in try");
         if (response) {
           // console.log(response.status)
-          return this.setState({ results: [...response.businesses], searchTerm: searchOptions });
+          return this.setState({
+            results: [...response.businesses],
+            location: searchOptions.location,
+            style: searchOptions.style,
+          });
         } else {
           throw new Error();
         }
         // response.ok ? console.log(response.status) : console.log('not working')
       } catch {
-        return this.setState({ results: [], searchTerm: searchOptions });
+        return this.setState({
+          results: [],
+          location: searchOptions.location,
+          style: searchOptions.style,
+        });
       }
       //  this.setState({results: [...response]}) : this.setState({results: []})
     });
@@ -76,8 +84,13 @@ class App extends Component {
             path="/"
             render={() => (
               <>
-              <SearchForm retrieveSearchResults={this.retrieveSearchResults} />
-              <SearchResultsContainer results={this.state.results} {...this.state.searchTerm}/>
+                <SearchForm
+                  retrieveSearchResults={this.retrieveSearchResults}
+                />
+                <SearchResultsContainer
+                  results={this.state.results}
+                  style={this.state.style}
+                />
               </>
             )}
           ></Route>
