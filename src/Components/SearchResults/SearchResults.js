@@ -52,7 +52,7 @@ const SearchResults = (props) => {
               ? `${distance} mile away`
               : `${distance} miles away`}
           </p>
-          <p>{props.price}</p>
+          <p>Price: {props.price}</p>
         </article>
       </section>
     </section>

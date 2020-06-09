@@ -34,7 +34,16 @@ class StylistPage extends Component {
         console.log("response.ok", response.ok);
         if (response) {
           console.log("response is ok");
-          this.setState({...response.location, ...response.price})
+          this.setState({
+            phone: response.display_phone,
+            location: response.location,
+            name: response.name,
+            rating: response.rating,
+            review_count: response.review_count,
+            photos: response.photos,
+            price: response.price,
+            url: response.url,
+          });
         } else {
           throw new Error();
         }
@@ -43,25 +52,30 @@ class StylistPage extends Component {
       }
     });
     //try catch should be in the data, I think
+    //I wonder where I should do the fetch call for reviews?
   };
   render() {
+      //how do I know if there's an error in order to display an error message?
+    const stringifiedRating = String(this.state.rating);
+    const rating = stringifiedRating.split("");
+    console.log(this.state.location);
     return (
       <section className="stylist-container">
         <section className="stylist-header">
           <section className="stylist-name-and-rating">
-            <h3>Salon</h3>
+            <h3>{this.state.name}</h3>
             <img
               className="star-rating"
               alt="star-rating"
-              //   src={
-              //     rating.length === 3
-              //       ? `images/yelp_stars/web_and_ios/small/small_${rating[0]}_half@2x.png`
-              //       : `images/yelp_stars/web_and_ios/small/small_${rating[0]}@2x.png`
-              //   }
+              src={
+                rating.length === 3
+                  ? `/images/yelp_stars/web_and_ios/small/small_${rating[0]}_half@2x.png`
+                  : `/images/yelp_stars/web_and_ios/small/small_${rating[0]}@2x.png`
+              }
               // need to account for no ratings
             ></img>
           </section>
-          <a href="google.com" target="_blank" rel="noopener noreferrer">
+          <a href={this.state.url} target="_blank" rel="noopener noreferrer">
             <img
               className="yelp-logo"
               src="/images/yelp-logo.svg"
@@ -70,22 +84,69 @@ class StylistPage extends Component {
           </a>
         </section>
         <section className="stylist-content">
-          <figure className="stylist-company-image">
-            <img
-              //   src={props.image_url}
-              alt={`stylist`}
-              className="stylist-company-image"
-            ></img>
-          </figure>
+          {/* <figure className="stylist-company-image"> */}
+          <img
+            src={this.state.photos ? this.state.photos[0] : null}
+            alt={`${this.state.name} stylist`}
+            className="stylist-company-image"
+          ></img>
+          {/* </figure> */}
           <article>
-            <p>reviews</p>
-            <p>distance</p>
-            <p>$$$</p>
+            <p>
+              {" "}
+              {this.state.review_count !== 1
+                ? `${this.state.review_count} reviews`
+                : `${this.state.review_count} review`}
+            </p>
+            <p></p>
+            <p>Price: {this.state.price}</p>
           </article>
         </section>
       </section>
     );
   }
 }
+
+// alias
+// "loc-lyfe-by-kiy-atlanta"
+
+// categories
+// [{…}]
+
+// coordinates
+// {latitude: 33.814147, longitude: -84.384553}
+// display_phone
+// ""
+
+// hours
+// [{…}]
+// id
+// "2Lx9Qsq3kEq7mcEMp903aQ"
+// image_url
+// "https://s3-media2.fl.yelpcdn.com/bphoto/cmE5noBC3GrTiDa0MYEVuw/o.jpg"
+// is_claimed
+// true
+// is_closed
+// false
+
+// location
+// {address1: "", address2: "", address3: "", city: "A…}
+// name
+// "Loc Lyfe By Kiy"
+// phone
+// ""
+
+// photos
+// ["https://s3-media2.fl.yelpcdn.com/bphoto/cmE5noBC3…]
+// price
+// "$"
+// rating
+// 4.5
+// review_count
+// 11
+// transactions
+// []
+// url
+// "https://www.yelp.com/biz/loc-lyfe-by-kiy-atlanta?adjust_creative=4b4u9NSjrFIuzcuj_TKnAQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=4b4u9NSjrFIuzcuj_TKnAQ"
 
 export default StylistPage;
