@@ -3,8 +3,8 @@
 
 .stylist-container {
   border: 1px solid #c4c4c4;
-  padding: 2%;
-  height: 70%;
+  padding: 3%;
+  height: 80%;
   width: 60%;
   margin: 2% auto;
   border-radius: 5px;
@@ -34,10 +34,12 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
+  align-content: flex-start;
 }
 
 .stylist-company-image {
-  height: 70%;
+  width: 40%;
+  max-height: 70%;
   /* width: 60%; */
   /* background-color: gray; */
   margin: 0;
@@ -51,10 +53,39 @@
   margin: 0; */
 }
 
-.stylist-content > article {
+.stylist-info-container > article {
   margin-left: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {
   color: black;
+}
+
+.stylist-info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.stylist-info-container * {
+    margin: 0;
+}
+
+.reviews {
+    margin-left: 5%;
+}
+
+.single-review {
+    margin: 4% 0;
+}
+
+.review-link {
+    color: #094093;
+    font-weight: bold;
+    margin: 2% 0;
+}
+
+.review-text {
+    font-style: italic;
 }

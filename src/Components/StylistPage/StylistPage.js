@@ -7,9 +7,7 @@ class StylistPage extends Component {
     this.state = {};
   }
 
-  //can't use this endpoint. provides lots of info but not info I need.
-  //doesn't return anything with just one review. ugh.
-  //will need to match the name with the name in the results array, maybe?
+ //how do I differentiate between loading and no results found?
   componentDidMount = async () => {
     let myHeaders = new Headers();
     myHeaders.append(
@@ -24,25 +22,31 @@ class StylistPage extends Component {
       // body: raw,
       // redirect: "follow",
     };
-    const info = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${this.props.id}`,
-      requestOptions
-    );
-    const data = await info.json().then((response) => {
+    const info = await Promise.all([
+      fetch(
+        `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${this.props.id}`,
+        requestOptions
+      ).then((response) => response.json()),
+      fetch(
+        `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${this.props.id}/reviews`,
+        requestOptions
+      ).then((response) => response.json()),
+    ]).then((response) => {
       try {
         console.log(response);
         console.log("response.ok", response.ok);
         if (response) {
           console.log("response is ok");
           this.setState({
-            phone: response.display_phone,
-            location: response.location,
-            name: response.name,
-            rating: response.rating,
-            review_count: response.review_count,
-            photos: response.photos,
-            price: response.price,
-            url: response.url,
+            phone: response[0].display_phone,
+            address: response[0].location.display_address,
+            name: response[0].name,
+            rating: response[0].rating,
+            review_count: response[0].review_count,
+            photos: response[0].photos,
+            price: response[0].price,
+            url: response[0].url,
+            reviews: response[1].reviews,
           });
         } else {
           throw new Error();
@@ -55,10 +59,29 @@ class StylistPage extends Component {
     //I wonder where I should do the fetch call for reviews?
   };
   render() {
-      //how do I know if there's an error in order to display an error message?
+    //how do I know if there's an error in order to display an error message?
     const stringifiedRating = String(this.state.rating);
     const rating = stringifiedRating.split("");
     console.log(this.state.location);
+    let allReviews;
+    if (this.state.reviews) {
+      allReviews = this.state.reviews.map((review) => {
+        return (
+          <section className="single-review">
+            <p className="review-text">{review.text}</p>
+            <p className="reviewer-name">-{review.user.name}</p>
+            <a
+              href={review.url}
+              className="review-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read more...
+            </a>
+          </section>
+        );
+      });
+    }
     return (
       <section className="stylist-container">
         <section className="stylist-header">
@@ -91,16 +114,20 @@ class StylistPage extends Component {
             className="stylist-company-image"
           ></img>
           {/* </figure> */}
-          <article>
-            <p>
-              {" "}
-              {this.state.review_count !== 1
-                ? `${this.state.review_count} reviews`
-                : `${this.state.review_count} review`}
-            </p>
-            <p></p>
-            <p>Price: {this.state.price}</p>
-          </article>
+          <section className="stylist-info-container">
+            <article>
+              <p>Address: {this.state.address ? this.state.address.join(', ') : null}</p>
+              <p>Phone: {this.state.phone || "unavailable"}</p>
+              <p>
+                {" "}
+                {this.state.review_count !== 1
+                  ? `${this.state.review_count} reviews`
+                  : `${this.state.review_count} review`}
+              </p>
+              <p>Price: {this.state.price}</p>
+            </article>
+            <section className="reviews">{allReviews}</section>
+          </section>
         </section>
       </section>
     );
