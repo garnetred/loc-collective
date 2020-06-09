@@ -13,7 +13,7 @@ const SearchResults = (props) => {
     <section className="specific-search-result">
       <section className="search-result-header">
         <section className="name-and-rating">
-          <h3>{props.name}</h3>
+          <Link to={`stylist/${props.id}`}><h3>{props.name}</h3></Link>
           <img
             className="star-rating"
             alt="star-rating"
@@ -52,7 +52,7 @@ const SearchResults = (props) => {
               ? `${distance} mile away`
               : `${distance} miles away`}
           </p>
-          <p>{props.price}</p>
+          <p>Price: {props.price}</p>
         </article>
       </section>
     </section>

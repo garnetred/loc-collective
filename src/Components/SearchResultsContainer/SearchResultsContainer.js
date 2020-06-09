@@ -17,6 +17,7 @@ const SearchResultsContainer = (props) => {
         distance={salon.distance}
         rating={salon.rating}
         price={salon.price}
+        id={salon.id}
       />
     );
   });
@@ -50,6 +51,7 @@ const SearchResultsContainer = (props) => {
             distance={2300}
             rating={4.0}
             price='$$$'
+            id='laalkajv;lakjsd;lakjfdq'
           />
         ) : (
           allSearchResults
