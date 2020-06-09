@@ -1,4 +1,52 @@
 .stylist-header {
-    font-size: 100px;
-    color: fuchsia;
 }
+
+.stylist-container {
+    border: 1px solid #c4c4c4;
+    padding: 2%;
+    height: 70%;
+    width: 60%;
+    margin: 2% auto;
+    border-radius: 5px;
+  }
+  
+  .stylist-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  }
+  
+  .stylist-name-and-rating {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 50%;
+  }
+  
+  .star-rating {
+      object-fit: contain;
+  }
+  
+  .stylist-content {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+  }
+  
+  .stylist-company-image {
+      height: 150px;
+      width: 200px;
+      background-color: gray;
+      margin: 0;
+      object-fit: cover;
+  }
+  
+  .stylist-content > article {
+      margin-left: 3%;
+  }
+  
+  h3 {
+      color: black;
+  }

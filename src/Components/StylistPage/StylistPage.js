@@ -7,12 +7,10 @@ class StylistPage extends Component {
     this.state = {};
   }
 
-  //can't use this endpoint. provides lots of info but not info I need. 
+  //can't use this endpoint. provides lots of info but not info I need.
   //doesn't return anything with just one review. ugh.
-  //will need to match the name with the name in the results array, maybe? 
-
-
-  retrieveStylistInfo = async () => {
+  //will need to match the name with the name in the results array, maybe?
+  componentDidMount = async () => {
     let myHeaders = new Headers();
     myHeaders.append(
       "Authorization",
@@ -31,16 +29,60 @@ class StylistPage extends Component {
       requestOptions
     );
     const data = await info.json().then((response) => {
-      console.log(response);
+      try {
+        console.log(response);
+        console.log("response.ok", response.ok);
+        if (response) {
+          console.log("response is ok");
+          this.setState({...response.location, ...response.price})
+        } else {
+          throw new Error();
+        }
+      } catch {
+        this.setState({ error: "no results found" });
+      }
     });
-    //try catch should be in the data, I think 
+    //try catch should be in the data, I think
   };
-
   render() {
-      this.retrieveStylistInfo();
     return (
       <section className="stylist-container">
-        <p className="stylist-header">Stylist Page</p>
+        <section className="stylist-header">
+          <section className="stylist-name-and-rating">
+            <h3>Salon</h3>
+            <img
+              className="star-rating"
+              alt="star-rating"
+              //   src={
+              //     rating.length === 3
+              //       ? `images/yelp_stars/web_and_ios/small/small_${rating[0]}_half@2x.png`
+              //       : `images/yelp_stars/web_and_ios/small/small_${rating[0]}@2x.png`
+              //   }
+              // need to account for no ratings
+            ></img>
+          </section>
+          <a href="google.com" target="_blank" rel="noopener noreferrer">
+            <img
+              className="yelp-logo"
+              src="/images/yelp-logo.svg"
+              alt="yelp-logo"
+            ></img>
+          </a>
+        </section>
+        <section className="stylist-content">
+          <figure className="stylist-company-image">
+            <img
+              //   src={props.image_url}
+              alt={`stylist`}
+              className="stylist-company-image"
+            ></img>
+          </figure>
+          <article>
+            <p>reviews</p>
+            <p>distance</p>
+            <p>$$$</p>
+          </article>
+        </section>
       </section>
     );
   }
