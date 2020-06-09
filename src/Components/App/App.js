@@ -3,6 +3,7 @@ import { Route, NavLink, Link, Switch, Router } from "react-router-dom";
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import SearchResultsContainer from "../SearchResultsContainer/SearchResultsContainer";
+import StylistPage from "../StylistPage/StylistPage";
 import "./App.css";
 
 class App extends Component {
@@ -79,6 +80,14 @@ class App extends Component {
           <Route path="/styles" />
           <Route path="/resources" />
           <Route path="/contact" />
+          <Route
+            path="/stylist/:id"
+            render={({ match }) => {
+              const { id } = match.params;
+              console.log(id);
+              return <StylistPage id={id} />;
+            }}
+          />
           <Route
             exact
             path="/"
