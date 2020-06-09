@@ -35,12 +35,28 @@ const SearchResultsContainer = (props) => {
         </label>
       </aside>
       <main className="all-search-results">
-       {props.style && !props.results.length ? <p className="no-results">No results found. Please try a new search.</p> : null}
-       {props.style === undefined ? <SearchResults /> : allSearchResults}
+        {props.style && !props.results.length ? (
+          <p className="no-results">
+            No results found. Please try a new search.
+          </p>
+        ) : null}
+        {props.style === undefined ? (
+          <SearchResults
+            key={Math.round(100000)}
+            name='Locs By Bess'
+            // image_url=
+            // url={salon.url}
+            review_count={22}
+            distance={2300}
+            rating={4.0}
+            price='$$$'
+          />
+        ) : (
+          allSearchResults
+        )}
       </main>
     </section>
   );
 };
-
 
 export default SearchResultsContainer;
