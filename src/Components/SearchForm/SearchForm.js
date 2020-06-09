@@ -24,7 +24,7 @@ class SearchForm extends Component {
 
   submitForm = (e) => {
     e.preventDefault();
-    this.props.retrieveSearchResults(this.state)
+    this.props.retrieveSearchResults(this.state);
   };
 
   render() {
@@ -48,10 +48,10 @@ class SearchForm extends Component {
             <option value="" selected disabled>
               -- Please select a style --{" "}
             </option>
-            <option value="locs+dreadlocks">traditional locs</option>
+            <option value="locs">traditional locs</option>
             <option value="sisterlocks">sisterlocks</option>
             <option value="brotherlocks">brotherlocks</option>
-            <option value="interlocks">interlocks</option>
+            <option value="interlocks+sisterlocks">interlocks</option>
             <option value="microlocs">microlocs</option>
             <option value="faux locs">faux locs</option>
           </select>

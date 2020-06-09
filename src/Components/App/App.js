@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { Route, NavLink, Link, Switch, Router } from "react-router-dom";
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
+import SearchResultsContainer from "../SearchResultsContainer/SearchResultsContainer";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      results: [],
+      searchTerm: "",
+    };
   }
 
   // componentDidMount = () => {};
@@ -20,8 +24,6 @@ class App extends Component {
       "Bearer B1luOAhR9OYY1l9WsHUFv7oJ2-CdckIvtrb7Q9RyptY6iJIIdCytMCmiE7BDg8QnGAMXhxWFkhSGZUJVLUjbBZHEpBouBNVjitjOQkwDqDSKRiVVLkp6cTl-A8rZXnYx"
     );
     myHeaders.append("Content-Type", "application/json");
-
-    let raw = "{name: 'Shelby', date: '5/30', time: '2:00', number: 2}";
 
     let requestOptions = {
       method: "GET",
@@ -40,13 +42,21 @@ class App extends Component {
         console.log(" in try");
         if (response) {
           // console.log(response.status)
-          return this.setState({ results: [...response.businesses] });
+          return this.setState({
+            results: [...response.businesses],
+            location: searchOptions.location,
+            style: searchOptions.style,
+          });
         } else {
           throw new Error();
         }
         // response.ok ? console.log(response.status) : console.log('not working')
       } catch {
-        return this.setState({ results: [] });
+        return this.setState({
+          results: [],
+          location: searchOptions.location,
+          style: searchOptions.style,
+        });
       }
       //  this.setState({results: [...response]}) : this.setState({results: []})
     });
@@ -55,6 +65,10 @@ class App extends Component {
     // .then((result) => console.log(result))
     // .catch((error) => console.log("error", error));
   };
+
+  //have to set it up so that if search options is blank, just displays the search results a particular way
+  //which means I need to pass it down as a prop
+  //search container needs to be underneath the search form, in hindsight, on that same page
 
   render() {
     return (
@@ -69,7 +83,15 @@ class App extends Component {
             exact
             path="/"
             render={() => (
-              <SearchForm retrieveSearchResults={this.retrieveSearchResults} />
+              <>
+                <SearchForm
+                  retrieveSearchResults={this.retrieveSearchResults}
+                />
+                <SearchResultsContainer
+                  results={this.state.results}
+                  style={this.state.style}
+                />
+              </>
             )}
           ></Route>
         </Switch>
