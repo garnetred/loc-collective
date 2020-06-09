@@ -52,7 +52,7 @@ const SearchResults = (props) => {
               ? `${distance} mile away`
               : `${distance} miles away`}
           </p>
-          {/* <p>Review sample if possible without fetch call</p> */}
+          <p>{props.price}</p>
         </article>
       </section>
     </section>
