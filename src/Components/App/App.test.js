@@ -5,11 +5,10 @@ import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import App from "./App";
 import "@sheerun/mutationobserver-shim";
 import { fetchStylist, getSearchResults } from "../../apiCalls";
-import { singleSalonBusinessFetch, singleSalon, salons } from "../../mockData";
+import { singleSalonBusinessFetch, salons } from "../../mockData";
 
 window.MutationObserver = require("@sheerun/mutationobserver-shim");
 jest.mock("../../apiCalls");
-const id = "ZrFvwUE6r0UE2HwOtjtX6Q";
 
 describe("App", () => {
   it("renders the App component", () => {
@@ -69,9 +68,6 @@ describe("App", () => {
         getByText("No results found. Please try a new search.")
       ).toBeInTheDocument()
     );
-    //have to make a fetch call first
-    //well fetch call should be invoked when you submit the form
-    //
   });
 
   it("should show results found if there are appropriate matches", async () => {
@@ -92,16 +88,32 @@ describe("App", () => {
 
     fireEvent.click(getByText("search"));
 
-    await waitFor(() =>
-      expect(
-        getByText("No results found. Please try a new search.")
-      ).toBeInTheDocument()
+    await waitFor(() => expect(getByText("Bornu Locs")).toBeInTheDocument());
+  });
+
+  it("should show detailed results after a user clicks on a result", async () => {
+    getSearchResults.mockResolvedValue(salons);
+    fetchStylist.mockReturnValue(Promise.resolve(singleSalonBusinessFetch));
+    const { getByText, getByTestId, getByPlaceholderText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     );
-    //have to make a fetch call first
-    //well fetch call should be invoked when you submit the form
-    //
+
+    fireEvent.change(getByTestId("select"), {
+      target: { value: "locs+dreadlocks" },
+    });
+
+    fireEvent.change(getByPlaceholderText("location"), {
+      target: { value: "Boston" },
+    });
+
+    fireEvent.click(getByText("search"));
+
+    fireEvent.click(getByText("Bornu Locs"));
+
+    await waitFor(() =>
+      expect(getByText("I hate this salon")).toBeInTheDocument()
+    );
   });
 });
-
-//tests
-//can click on that result and then see more details on the page (like reviews)

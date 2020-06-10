@@ -15,7 +15,7 @@ class App extends Component {
     super();
     this.state = {
       results: [],
-      searchTerm: "",
+      // searchTerm: "",
     };
   }
 
@@ -60,7 +60,7 @@ class App extends Component {
   //search container needs to be underneath the search form, in hindsight, on that same page
 
   render() {
-    console.log(this.state);
+    console.log(this.state.results);
     return (
       <section className="App">
         <Header />

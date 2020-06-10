@@ -1,13 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import {
-  render,
-  fireEvent,
-  waitFor,
-  getByDisplayValue,
-} from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@sheerun/mutationobserver-shim";
-// import {mutationobserver} from 'mutationobserver-shim'
 import { BrowserRouter } from "react-router-dom";
 import SearchForm from "./SearchForm";
 window.MutationObserver = require("@sheerun/mutationobserver-shim");
@@ -26,13 +20,7 @@ describe("SearchForm", () => {
 
   it("should submit the form if all fields have been filled out", async () => {
     const retrieveSearchResults = jest.fn();
-    const {
-      getByPlaceholderText,
-      getByText,
-      getByTestId,
-      getByDisplayValue,
-      getByLabelText,
-    } = render(
+    const { getByPlaceholderText, getByText, getByTestId } = render(
       <BrowserRouter>
         <SearchForm retrieveSearchResults={retrieveSearchResults} />
       </BrowserRouter>

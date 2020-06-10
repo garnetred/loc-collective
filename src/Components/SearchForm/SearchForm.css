@@ -2,8 +2,6 @@
 
 .search-form-container {
   height: 65%;
-  /* background: url('/images/eyeforebony-nappy-.jpeg');
-    background-position: center; */
 }
 
 .background-image-container {
@@ -19,8 +17,6 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  /* top: 2%;
-  left: 0; */
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
@@ -68,10 +64,6 @@
   border-radius: 5px;
   font-size: 20px;
 }
-
-/* .search-form > select {
-  height: 100%;
-} */
 
 .search-form-button {
   width: 15%;

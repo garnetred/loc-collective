@@ -1,13 +1,8 @@
 import React from "react";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import StylistPage from "./StylistPage";
 import "@testing-library/jest-dom/extend-expect";
-import {
-  render,
-  fireEvent,
-  waitFor,
-  getByTestId,
-} from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import "@sheerun/mutationobserver-shim";
 import { fetchStylist } from "../../apiCalls";
 import { singleSalonBusinessFetch } from "../../mockData";
@@ -25,7 +20,6 @@ describe("StylistPage", () => {
       </MemoryRouter>
     );
 
-    //gotta mock out this implementation, but how?
     await waitFor(() => expect(getByAltText("yelp-logo")).toBeInTheDocument());
   });
 
