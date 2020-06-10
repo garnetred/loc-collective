@@ -110,6 +110,8 @@ describe("App", () => {
 
     fireEvent.click(getByText("search"));
 
+    await waitFor(() => expect(getByText("Bornu Locs")).toBeInTheDocument());
+
     fireEvent.click(getByText("Bornu Locs"));
 
     await waitFor(() =>
