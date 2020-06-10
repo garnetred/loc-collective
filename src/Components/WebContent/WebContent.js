@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./WebContent.css";
 
 const WebContent = (props) => {
@@ -20,6 +21,11 @@ const WebContent = (props) => {
       </section>
     </section>
   );
+};
+
+WebContent.propTypes = {
+  header: PropTypes.string,
+  info: PropTypes.any.isRequired,
 };
 
 export default WebContent;

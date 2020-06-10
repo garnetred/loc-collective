@@ -2,8 +2,6 @@
 
 .search-form-container {
   height: 65%;
-  /* background: url('/images/eyeforebony-nappy-.jpeg');
-    background-position: center; */
 }
 
 .background-image-container {
@@ -19,8 +17,6 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  /* top: 2%;
-  left: 0; */
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
@@ -51,27 +47,40 @@
 }
 
 .search-form {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 2% auto;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1% auto;
 }
 
 .search-form * {
-    line-height: 20px;
+  line-height: 20px;
+  font-size: 20px;
 }
 
-.location-input, .search-form > select {
-    border-radius: 5px;
-    font-size: 20px;
+.location-input,
+.search-form > select {
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .search-form-button {
-    width: 15%;
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 1%;
-    background-color: #094093;
-    color: white;
+  width: 15%;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 1%;
+  background-color: #094093;
+  color: white;
+}
+
+.error-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  margin-left: 26%;
+}
+
+.form-error-message {
+  color: red;
 }

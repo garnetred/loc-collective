@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./SearchForm.css";
 
 class SearchForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       location: "",
       style: "",
+      locationError: false,
+      styleError: false,
     };
   }
 
@@ -22,7 +25,22 @@ class SearchForm extends Component {
 
   submitForm = (e) => {
     e.preventDefault();
-    this.props.retrieveSearchResults(this.state);
+    if (this.state.location !== "" && this.state.style !== "") {
+      this.props.retrieveSearchResults(this.state);
+      this.setState({ locationError: false, styleError: false });
+    } else {
+      this.displayErrorMessage();
+    }
+  };
+
+  displayErrorMessage = () => {
+    if (this.state.location === "") {
+      this.setState({ locationError: true });
+    }
+
+    if (this.state.style === "") {
+      this.setState({ styleError: true });
+    }
   };
 
   render() {
@@ -41,8 +59,14 @@ class SearchForm extends Component {
           </section>
         </section>
 
-        <form className="search-form" onSubmit={this.submitForm}>
-          <select name="style" required onChange={(e) => this.handleChange(e)}>
+        <form className="search-form" data-testid="form">
+          <select
+            name="style"
+            id="style"
+            data-testid="select"
+            onChange={(e) => this.handleChange(e)}
+            aria-label="style"
+          >
             <option value="" selected disabled>
               -- Please select a style --{" "}
             </option>
@@ -56,24 +80,36 @@ class SearchForm extends Component {
           <input
             className="location-input"
             type="text"
-            required
             placeholder="location"
             name="location"
             aria-label="location"
             value={this.state.location}
             onChange={(e) => this.handleChange(e)}
-          ></input>
-          <button type="submit" className="search-form-button">
+            required
+          />
+          <button
+            type="submit"
+            className="search-form-button"
+            onClick={this.submitForm}
+          >
             search
           </button>
         </form>
+        <section className="error-wrapper">
+          {this.state.styleError && (
+            <p className="form-error-message">Please choose a hairstyle.</p>
+          )}
+          {this.state.locationError && (
+            <p className="form-error-message">Please input a location.</p>
+          )}
+        </section>
       </section>
     );
   }
 }
 
-//need to pass function that runs the fetch call here
-//also need to store these values in state and then pass them on
-//or do I?
+SearchForm.propTypes = {
+  retrieveSearchResults: PropTypes.func,
+};
 
 export default SearchForm;
