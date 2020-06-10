@@ -18,16 +18,11 @@ class SearchForm extends Component {
       this.setState({ location: e.target.value });
     }
     if (name === "style") {
-      console.log("in style part of handle change ");
-      console.log(e.target.value);
       this.setState({ style: e.target.value });
     }
   };
 
   submitForm = (e) => {
-    //add error handling
-    console.log("in submit form");
-    console.log(this.state);
     e.preventDefault();
     if (this.state.location !== "" && this.state.style !== "") {
       this.props.retrieveSearchResults(this.state);
@@ -38,7 +33,6 @@ class SearchForm extends Component {
   };
 
   displayErrorMessage = () => {
-    console.log("in display error message");
     if (this.state.location === "") {
       this.setState({ locationError: true });
     }
@@ -113,9 +107,5 @@ class SearchForm extends Component {
     );
   }
 }
-
-//need to pass function that runs the fetch call here
-//also need to store these values in state and then pass them on
-//or do I?
 
 export default SearchForm;

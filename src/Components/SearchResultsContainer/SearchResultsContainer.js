@@ -2,8 +2,6 @@ import React from "react";
 import "./SearchResultsContainer.css";
 import SearchResults from "../SearchResults/SearchResults";
 
-//function or class? hmm
-
 const SearchResultsContainer = (props) => {
   const allSearchResults = props.results.map((salon) => {
     return (
@@ -43,14 +41,14 @@ const SearchResultsContainer = (props) => {
         {props.style === undefined ? (
           <SearchResults
             key={Math.round(100000)}
-            name="Locs By Bess"
-            // image_url=
-            // url={salon.url}
-            review_count={22}
-            distance={2300}
-            rating={4.0}
-            price="$$$"
-            id="laalkajv;lakjsd;lakjfdq"
+            name="Bornu Locs - Natural Dreadlocks- Hair Products & Loc Extensions"
+            image_url="https://s3-media2.fl.yelpcdn.com/bphoto/0dZbm39TYA1r2FfpwdPi7Q/o.jpg"
+            url="https://www.yelp.com/biz/bornu-locs-natural-dreadlocks-hair-products-and-loc-extensions-atlanta?adjust_creative=4b4u9NSjrFIuzcuj_TKnAQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=4b4u9NSjrFIuzcuj_TKnAQ"
+            review_count={20}
+            distance={10079.201499705512}
+            rating={4.5}
+            price="$$"
+            id="_Qde9mvL7hddZTiT1YMN8Q"
           />
         ) : (
           allSearchResults

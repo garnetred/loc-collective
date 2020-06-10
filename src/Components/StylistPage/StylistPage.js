@@ -12,7 +12,7 @@ class StylistPage extends Component {
   //response is this function but it's not returning anything in this test
 
   componentDidMount = async () => {
-      console.log(fetchStylist(this.props.id))
+    console.log(fetchStylist(this.props.id));
     fetchStylist(this.props.id).then((response) => {
       try {
         console.log(response);
@@ -37,11 +37,8 @@ class StylistPage extends Component {
         this.setState({ error: "no results found" });
       }
     });
-    //try catch should be in the data, I think
-    //I wonder where I should do the fetch call for reviews?
   };
   render() {
-    //how do I know if there's an error in order to display an error message?
     const stringifiedRating = String(this.state.rating);
     const rating = stringifiedRating.split("");
     console.log(this.state.location);

@@ -3,17 +3,16 @@ import "./SearchResults.css";
 import { Link } from "react-router-dom";
 
 const SearchResults = (props) => {
-  console.log(props);
-
-  const stringifiedRating = String(props.rating)
+  const stringifiedRating = String(props.rating);
   const rating = stringifiedRating.split("");
-  console.log(rating)
   const distance = (props.distance / 1609).toFixed(2);
   return (
     <section className="specific-search-result">
       <section className="search-result-header">
         <section className="name-and-rating">
-          <Link to={`stylist/${props.id}`}><h3>{props.name}</h3></Link>
+          <Link to={`stylist/${props.id}`}>
+            <h3>{props.name}</h3>
+          </Link>
           <img
             className="star-rating"
             alt="star-rating"
@@ -22,7 +21,6 @@ const SearchResults = (props) => {
                 ? `images/yelp_stars/web_and_ios/small/small_${rating[0]}_half@2x.png`
                 : `images/yelp_stars/web_and_ios/small/small_${rating[0]}@2x.png`
             }
-            // need to account for no ratings
           ></img>
         </section>
         <a href={props.url} target="_blank" rel="noopener noreferrer">
@@ -56,9 +54,6 @@ const SearchResults = (props) => {
         </article>
       </section>
     </section>
-    //divide by 1609 to convert meters to miles
-    //must link yelp business page
-    //must also convert rating into an array, then check to see if the third value is a 0 or a 5
   );
 };
 
