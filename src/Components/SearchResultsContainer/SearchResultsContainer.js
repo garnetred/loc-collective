@@ -44,14 +44,14 @@ const SearchResultsContainer = (props) => {
         {props.style === undefined ? (
           <SearchResults
             key={Math.round(100000)}
-            name='Locs By Bess'
+            name="Locs By Bess"
             // image_url=
             // url={salon.url}
             review_count={22}
             distance={2300}
             rating={4.0}
-            price='$$$'
-            id='laalkajv;lakjsd;lakjfdq'
+            price="$$$"
+            id="laalkajv;lakjsd;lakjfdq"
           />
         ) : (
           allSearchResults
