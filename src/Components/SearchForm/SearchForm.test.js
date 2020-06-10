@@ -4,6 +4,7 @@ import {
   render,
   fireEvent,
   waitFor,
+  getByDisplayValue,
 } from "@testing-library/react";
 import "@sheerun/mutationobserver-shim";
 // import {mutationobserver} from 'mutationobserver-shim'
@@ -25,32 +26,41 @@ describe("SearchForm", () => {
 
   it("should submit the form if all fields have been filled out", async () => {
     const retrieveSearchResults = jest.fn();
-    const { getByPlaceholderText, getByText, getByTestId } = render(
+    const {
+      getByPlaceholderText,
+      getByText,
+      getByTestId,
+      getByDisplayValue,
+      getByLabelText,
+    } = render(
       <BrowserRouter>
         <SearchForm retrieveSearchResults={retrieveSearchResults} />
       </BrowserRouter>
     );
 
-    fireEvent.change(getByText("-- Please select a style --"), {
-      target: { value: "interlocks+sisterlocks" },
+    fireEvent.change(getByTestId("select"), {
+      target: { value: "locs+dreadlocks" },
     });
 
     fireEvent.change(getByPlaceholderText("location"), {
       target: { value: "Boston" },
     });
+
     fireEvent.click(getByText("search"));
-    fireEvent.submit(getByTestId("form"));
     await waitFor(() => expect(retrieveSearchResults).toHaveBeenCalled());
   });
 
-  it("should not submit the form if fields are empty", () => {
+  it("should not submit the form if fields are empty", async () => {
     const retrieveSearchResults = jest.fn();
     const { getByText } = render(
       <BrowserRouter>
         <SearchForm retrieveSearchResults={retrieveSearchResults} />
       </BrowserRouter>
     );
+
     fireEvent.click(getByText("search"));
-    expect(retrieveSearchResults).not.toHaveBeenCalled();
+    await waitFor(() =>
+      expect(getByText("Please input a location.")).toBeInTheDocument()
+    );
   });
 });

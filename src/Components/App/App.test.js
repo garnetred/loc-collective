@@ -39,26 +39,57 @@ describe("App", () => {
   });
 
   it("should show no results found if there are no appropriate matches", async () => {
-    getSearchResults.mockReturnValue({
-      businesses: [],
-      region: {
-        center: { longitude: -84.30290222167969, latitude: 39.8673127275353 },
-      },
-      total: 0,
-    });
+    getSearchResults.mockReturnValue(
+      Promise.resolve({
+        businesses: [],
+        region: {
+          center: { longitude: -84.30290222167969, latitude: 39.8673127275353 },
+        },
+        total: 0,
+      })
+    );
     const { getByText, getByTestId, getByPlaceholderText } = render(
       <MemoryRouter>
         <App />
       </MemoryRouter>
     );
 
-    fireEvent.change(getByText("-- Please select a style --"), {
-      target: { value: "interlocks+sisterlocks" },
+    fireEvent.change(getByTestId("select"), {
+      target: { value: "locs+dreadlocks" },
     });
 
     fireEvent.change(getByPlaceholderText("location"), {
       target: { value: "Boston" },
     });
+
+    fireEvent.click(getByText("search"));
+
+    await waitFor(() =>
+      expect(
+        getByText("No results found. Please try a new search.")
+      ).toBeInTheDocument()
+    );
+    //have to make a fetch call first
+    //well fetch call should be invoked when you submit the form
+    //
+  });
+
+  it("should show results found if there are appropriate matches", async () => {
+    getSearchResults.mockResolvedValue(salons);
+    const { getByText, getByTestId, getByPlaceholderText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    fireEvent.change(getByTestId("select"), {
+      target: { value: "locs+dreadlocks" },
+    });
+
+    fireEvent.change(getByPlaceholderText("location"), {
+      target: { value: "Boston" },
+    });
+
     fireEvent.click(getByText("search"));
 
     await waitFor(() =>
@@ -73,6 +104,4 @@ describe("App", () => {
 });
 
 //tests
-//can type in a search term and get the appropriate results displaying on the page
-//if there aren't any appropriate results, will get 'no results found' in response
 //can click on that result and then see more details on the page (like reviews)

@@ -7,6 +7,8 @@ class SearchForm extends Component {
     this.state = {
       location: "",
       style: "",
+      locationError: false,
+      styleError: false,
     };
   }
 
@@ -16,14 +18,33 @@ class SearchForm extends Component {
       this.setState({ location: e.target.value });
     }
     if (name === "style") {
+      console.log("in style part of handle change ");
+      console.log(e.target.value);
       this.setState({ style: e.target.value });
     }
   };
 
   submitForm = (e) => {
+    //add error handling
+    console.log("in submit form");
+    console.log(this.state);
     e.preventDefault();
     if (this.state.location !== "" && this.state.style !== "") {
       this.props.retrieveSearchResults(this.state);
+      this.setState({ locationError: false, styleError: false });
+    } else {
+      this.displayErrorMessage();
+    }
+  };
+
+  displayErrorMessage = () => {
+    console.log("in display error message");
+    if (this.state.location === "") {
+      this.setState({ locationError: true });
+    }
+
+    if (this.state.style === "") {
+      this.setState({ styleError: true });
     }
   };
 
@@ -43,22 +64,25 @@ class SearchForm extends Component {
           </section>
         </section>
 
-        <form
-          className="search-form"
-          data-testid="form"
-          onSubmit={this.submitForm}
-        >
-          <select name="style" onChange={(e) => this.handleChange(e)} required>
-            <option value="" selected disabled>
-              -- Please select a style --{" "}
-            </option>
-            <option value="locs+dreadlocks">traditional locs</option>
-            <option value="sisterlocks">sisterlocks</option>
-            <option value="brotherlocks">brotherlocks</option>
-            <option value="interlocks+sisterlocks">interlocks</option>
-            <option value="microlocs">microlocs</option>
-            <option value="faux locs">faux locs</option>
-          </select>
+        <form className="search-form" data-testid="form">
+          <label htmlFor="style">
+            <select
+              name="style"
+              id="style"
+              data-testid="select"
+              onChange={(e) => this.handleChange(e)}
+            >
+              <option value="" selected disabled>
+                -- Please select a style --{" "}
+              </option>
+              <option value="locs+dreadlocks">traditional locs</option>
+              <option value="sisterlocks">sisterlocks</option>
+              <option value="brotherlocks">brotherlocks</option>
+              <option value="interlocks+sisterlocks">interlocks</option>
+              <option value="microlocs">microlocs</option>
+              <option value="faux locs">faux locs</option>
+            </select>
+          </label>
           <input
             className="location-input"
             type="text"
@@ -69,10 +93,22 @@ class SearchForm extends Component {
             onChange={(e) => this.handleChange(e)}
             required
           />
-          <button type="submit" className="search-form-button">
+          <button
+            type="submit"
+            className="search-form-button"
+            onClick={this.submitForm}
+          >
             search
           </button>
         </form>
+        <section className="error-wrapper">
+          {this.state.styleError && (
+            <p className="form-error-message">Please choose a hairstyle.</p>
+          )}
+          {this.state.locationError && (
+            <p className="form-error-message">Please input a location.</p>
+          )}
+        </section>
       </section>
     );
   }

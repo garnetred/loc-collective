@@ -28,17 +28,19 @@ class App extends Component {
       try {
         console.log(" in try");
         if (response) {
-          // console.log(response.status)
+          console.log("in if statement");
           return this.setState({
             results: [...response.businesses],
             location: searchOptions.location,
             style: searchOptions.style,
           });
         } else {
+          console.log("in else statement");
           throw new Error();
         }
         // response.ok ? console.log(response.status) : console.log('not working')
       } catch {
+        console.log("in catch");
         return this.setState({
           results: [],
           location: searchOptions.location,
@@ -58,6 +60,7 @@ class App extends Component {
   //search container needs to be underneath the search form, in hindsight, on that same page
 
   render() {
+    console.log(this.state);
     return (
       <section className="App">
         <Header />
