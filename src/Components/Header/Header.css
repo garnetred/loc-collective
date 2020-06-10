@@ -33,3 +33,8 @@ a {
   width: 30%;
   margin: 0 2%;
 }
+
+.active {
+  font-style: italic;
+  border-bottom: 2px solid white;
+}
