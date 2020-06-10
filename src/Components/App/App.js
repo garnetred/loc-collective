@@ -7,6 +7,7 @@ import StylistPage from "../StylistPage/StylistPage";
 import WebContent from "../WebContent/WebContent";
 import WebContentContainer from "../WebContentContainer/WebContentContainer";
 import { styles, about, resources } from "../../content-data";
+import { getSearchResults } from "../../apiCalls";
 import "./App.css";
 
 class App extends Component {
@@ -21,26 +22,8 @@ class App extends Component {
   // componentDidMount = () => {};
 
   retrieveSearchResults = async (searchOptions) => {
-    const searchTerm = searchOptions.style.split(" ").join("+");
-    let myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer B1luOAhR9OYY1l9WsHUFv7oJ2-CdckIvtrb7Q9RyptY6iJIIdCytMCmiE7BDg8QnGAMXhxWFkhSGZUJVLUjbBZHEpBouBNVjitjOQkwDqDSKRiVVLkp6cTl-A8rZXnYx"
-    );
-    myHeaders.append("Content-Type", "application/json");
-
-    let requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      // body: raw,
-      // redirect: "follow",
-    };
-
-    const info = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${searchTerm}&category=(hairstylists, US)&location=${searchOptions.location}&limit=50`,
-      requestOptions
-    );
-    const data = await info.json().then((response) => {
+    console.log(getSearchResults(searchOptions));
+    getSearchResults(searchOptions).then((response) => {
       console.log(response);
       try {
         console.log(" in try");

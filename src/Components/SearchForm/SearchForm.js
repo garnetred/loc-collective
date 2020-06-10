@@ -22,7 +22,7 @@ class SearchForm extends Component {
 
   submitForm = (e) => {
     e.preventDefault();
-    if (this.state.location !== '' && this.state.style !== '') {
+    if (this.state.location !== "" && this.state.style !== "") {
       this.props.retrieveSearchResults(this.state);
     }
   };

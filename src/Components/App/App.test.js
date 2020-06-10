@@ -1,7 +1,15 @@
 import React from "react";
-import { render, fireEvent, getByTestId } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { render, fireEvent, waitFor } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import App from "./App";
+import "@sheerun/mutationobserver-shim";
+import { fetchStylist, getSearchResults } from "../../apiCalls";
+import { singleSalonBusinessFetch, singleSalon, salons } from "../../mockData";
+
+window.MutationObserver = require("@sheerun/mutationobserver-shim");
+jest.mock("../../apiCalls");
+const id = "ZrFvwUE6r0UE2HwOtjtX6Q";
 
 describe("App", () => {
   it("renders the App component", () => {
@@ -26,6 +34,41 @@ describe("App", () => {
     expect(getByText(aboutDetails)).toBeInTheDocument();
     fireEvent.click(getByText("resources"));
     expect(getByText(resourcesDetails)).toBeInTheDocument();
+    fireEvent.click(getByText("styles"));
+    expect(getByText("Interlocks")).toBeInTheDocument();
+  });
+
+  it("should show no results found if there are no appropriate matches", async () => {
+    getSearchResults.mockReturnValue({
+      businesses: [],
+      region: {
+        center: { longitude: -84.30290222167969, latitude: 39.8673127275353 },
+      },
+      total: 0,
+    });
+    const { getByText, getByTestId, getByPlaceholderText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    fireEvent.change(getByText("-- Please select a style --"), {
+      target: { value: "interlocks+sisterlocks" },
+    });
+
+    fireEvent.change(getByPlaceholderText("location"), {
+      target: { value: "Boston" },
+    });
+    fireEvent.click(getByText("search"));
+
+    await waitFor(() =>
+      expect(
+        getByText("No results found. Please try a new search.")
+      ).toBeInTheDocument()
+    );
+    //have to make a fetch call first
+    //well fetch call should be invoked when you submit the form
+    //
   });
 });
 
@@ -33,6 +76,3 @@ describe("App", () => {
 //can type in a search term and get the appropriate results displaying on the page
 //if there aren't any appropriate results, will get 'no results found' in response
 //can click on that result and then see more details on the page (like reviews)
-//can click on the resources tab and see what's on that page
-//can click on about and see what's there
-//can click on styles and see what's there
