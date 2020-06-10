@@ -10,8 +10,6 @@ class SearchForm extends Component {
     };
   }
 
-  handleStyle = () => {};
-
   handleChange = (e) => {
     const { name } = e.target;
     if (name === "location") {

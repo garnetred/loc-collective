@@ -6,9 +6,6 @@ import SearchResultsContainer from "./SearchResultsContainer";
 import { salons } from "../../mockData";
 
 describe("SearchResultsContainer", () => {
-  //need to mock out some data to use for results
-  //needed mocks - list of salons
-  //single salon
   it("should render the SearchResultsContainer component", () => {
     const { getByText } = render(
       <BrowserRouter>
