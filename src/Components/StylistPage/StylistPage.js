@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./StylistPage.css";
+import { fetchStylist } from "../../apiCalls";
 
 class StylistPage extends Component {
   constructor(props) {
@@ -7,31 +8,12 @@ class StylistPage extends Component {
     this.state = {};
   }
 
- //how do I differentiate between loading and no results found?
-  componentDidMount = async () => {
-    let myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer B1luOAhR9OYY1l9WsHUFv7oJ2-CdckIvtrb7Q9RyptY6iJIIdCytMCmiE7BDg8QnGAMXhxWFkhSGZUJVLUjbBZHEpBouBNVjitjOQkwDqDSKRiVVLkp6cTl-A8rZXnYx"
-    );
-    myHeaders.append("Content-Type", "application/json");
+  //how do I differentiate between loading and no results found?
+  //response is this function but it's not returning anything in this test
 
-    let requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      // body: raw,
-      // redirect: "follow",
-    };
-    const info = await Promise.all([
-      fetch(
-        `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${this.props.id}`,
-        requestOptions
-      ).then((response) => response.json()),
-      fetch(
-        `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${this.props.id}/reviews`,
-        requestOptions
-      ).then((response) => response.json()),
-    ]).then((response) => {
+  componentDidMount = async () => {
+      console.log(fetchStylist(this.props.id))
+    fetchStylist(this.props.id).then((response) => {
       try {
         console.log(response);
         console.log("response.ok", response.ok);
@@ -63,6 +45,7 @@ class StylistPage extends Component {
     const stringifiedRating = String(this.state.rating);
     const rating = stringifiedRating.split("");
     console.log(this.state.location);
+    console.log(this.state);
     let allReviews;
     if (this.state.reviews) {
       allReviews = this.state.reviews.map((review) => {
@@ -116,7 +99,10 @@ class StylistPage extends Component {
           {/* </figure> */}
           <section className="stylist-info-container">
             <article>
-              <p>Address: {this.state.address ? this.state.address.join(', ') : null}</p>
+              <p>
+                Address:{" "}
+                {this.state.address ? this.state.address.join(", ") : null}
+              </p>
               <p>Phone: {this.state.phone || "unavailable"}</p>
               <p>
                 {" "}

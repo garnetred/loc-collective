@@ -4,7 +4,6 @@ import {
   render,
   fireEvent,
   waitFor,
-  getByTestId,
 } from "@testing-library/react";
 import "@sheerun/mutationobserver-shim";
 // import {mutationobserver} from 'mutationobserver-shim'
