@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./SearchForm.css";
 
 class SearchForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       location: "",
       style: "",
@@ -59,24 +60,23 @@ class SearchForm extends Component {
         </section>
 
         <form className="search-form" data-testid="form">
-          <label htmlFor="style">
-            <select
-              name="style"
-              id="style"
-              data-testid="select"
-              onChange={(e) => this.handleChange(e)}
-            >
-              <option value="" selected disabled>
-                -- Please select a style --{" "}
-              </option>
-              <option value="locs+dreadlocks">traditional locs</option>
-              <option value="sisterlocks">sisterlocks</option>
-              <option value="brotherlocks">brotherlocks</option>
-              <option value="interlocks+sisterlocks">interlocks</option>
-              <option value="microlocs">microlocs</option>
-              <option value="faux locs">faux locs</option>
-            </select>
-          </label>
+          <select
+            name="style"
+            id="style"
+            data-testid="select"
+            onChange={(e) => this.handleChange(e)}
+            aria-label="style"
+          >
+            <option value="" selected disabled>
+              -- Please select a style --{" "}
+            </option>
+            <option value="locs+dreadlocks">traditional locs</option>
+            <option value="sisterlocks">sisterlocks</option>
+            <option value="brotherlocks">brotherlocks</option>
+            <option value="interlocks+sisterlocks">interlocks</option>
+            <option value="microlocs">microlocs</option>
+            <option value="faux locs">faux locs</option>
+          </select>
           <input
             className="location-input"
             type="text"
@@ -107,5 +107,9 @@ class SearchForm extends Component {
     );
   }
 }
+
+SearchForm.propTypes = {
+  retrieveSearchResults: PropTypes.func,
+};
 
 export default SearchForm;

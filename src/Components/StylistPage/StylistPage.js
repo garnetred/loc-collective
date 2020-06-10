@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./StylistPage.css";
 import { fetchStylist } from "../../apiCalls";
 
@@ -8,17 +9,10 @@ class StylistPage extends Component {
     this.state = {};
   }
 
-  //how do I differentiate between loading and no results found?
-  //response is this function but it's not returning anything in this test
-
   componentDidMount = async () => {
-    console.log(fetchStylist(this.props.id));
     fetchStylist(this.props.id).then((response) => {
       try {
-        console.log(response);
-        console.log("response.ok", response.ok);
         if (response) {
-          console.log("response is ok");
           this.setState({
             phone: response[0].display_phone,
             address: response[0].location.display_address,
@@ -41,8 +35,6 @@ class StylistPage extends Component {
   render() {
     const stringifiedRating = String(this.state.rating);
     const rating = stringifiedRating.split("");
-    console.log(this.state.location);
-    console.log(this.state);
     let allReviews;
     if (this.state.reviews) {
       allReviews = this.state.reviews.map((review) => {
@@ -75,7 +67,6 @@ class StylistPage extends Component {
                   ? `/images/yelp_stars/web_and_ios/small/small_${rating[0]}_half@2x.png`
                   : `/images/yelp_stars/web_and_ios/small/small_${rating[0]}@2x.png`
               }
-              // need to account for no ratings
             ></img>
           </section>
           <a href={this.state.url} target="_blank" rel="noopener noreferrer">
@@ -87,13 +78,11 @@ class StylistPage extends Component {
           </a>
         </section>
         <section className="stylist-content">
-          {/* <figure className="stylist-company-image"> */}
           <img
             src={this.state.photos ? this.state.photos[0] : null}
             alt={`${this.state.name} stylist`}
             className="stylist-company-image"
           ></img>
-          {/* </figure> */}
           <section className="stylist-info-container">
             <article>
               <p>
@@ -117,46 +106,8 @@ class StylistPage extends Component {
   }
 }
 
-// alias
-// "loc-lyfe-by-kiy-atlanta"
-
-// categories
-// [{…}]
-
-// coordinates
-// {latitude: 33.814147, longitude: -84.384553}
-// display_phone
-// ""
-
-// hours
-// [{…}]
-// id
-// "2Lx9Qsq3kEq7mcEMp903aQ"
-// image_url
-// "https://s3-media2.fl.yelpcdn.com/bphoto/cmE5noBC3GrTiDa0MYEVuw/o.jpg"
-// is_claimed
-// true
-// is_closed
-// false
-
-// location
-// {address1: "", address2: "", address3: "", city: "A…}
-// name
-// "Loc Lyfe By Kiy"
-// phone
-// ""
-
-// photos
-// ["https://s3-media2.fl.yelpcdn.com/bphoto/cmE5noBC3…]
-// price
-// "$"
-// rating
-// 4.5
-// review_count
-// 11
-// transactions
-// []
-// url
-// "https://www.yelp.com/biz/loc-lyfe-by-kiy-atlanta?adjust_creative=4b4u9NSjrFIuzcuj_TKnAQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=4b4u9NSjrFIuzcuj_TKnAQ"
+StylistPage.propTypes = {
+  id: PropTypes.string,
+};
 
 export default StylistPage;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchResults.css";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const SearchResults = (props) => {
@@ -55,6 +56,17 @@ const SearchResults = (props) => {
       </section>
     </section>
   );
+};
+
+SearchResults.propTypes = {
+  name: PropTypes.string,
+  image_url: PropTypes.string,
+  url: PropTypes.string,
+  review_count: PropTypes.number,
+  distance: PropTypes.number,
+  rating: PropTypes.number,
+  price: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default SearchResults;
