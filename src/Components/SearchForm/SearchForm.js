@@ -22,7 +22,9 @@ class SearchForm extends Component {
 
   submitForm = (e) => {
     e.preventDefault();
-    this.props.retrieveSearchResults(this.state);
+    if (this.state.location !== '' && this.state.style !== '') {
+      this.props.retrieveSearchResults(this.state);
+    }
   };
 
   render() {
@@ -41,8 +43,12 @@ class SearchForm extends Component {
           </section>
         </section>
 
-        <form className="search-form" onSubmit={this.submitForm}>
-          <select name="style" required onChange={(e) => this.handleChange(e)}>
+        <form
+          className="search-form"
+          data-testid="form"
+          onSubmit={this.submitForm}
+        >
+          <select name="style" onChange={(e) => this.handleChange(e)} required>
             <option value="" selected disabled>
               -- Please select a style --{" "}
             </option>
@@ -56,13 +62,13 @@ class SearchForm extends Component {
           <input
             className="location-input"
             type="text"
-            required
             placeholder="location"
             name="location"
             aria-label="location"
             value={this.state.location}
             onChange={(e) => this.handleChange(e)}
-          ></input>
+            required
+          />
           <button type="submit" className="search-form-button">
             search
           </button>
