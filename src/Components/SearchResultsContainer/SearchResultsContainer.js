@@ -5,7 +5,6 @@ import SearchResults from "../SearchResults/SearchResults";
 //function or class? hmm
 
 const SearchResultsContainer = (props) => {
-  console.log(props);
   const allSearchResults = props.results.map((salon) => {
     return (
       <SearchResults
