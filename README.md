@@ -15,6 +15,8 @@ Navigate to the repository's location on your computer. Run the `cd` command to 
 I used the below prototype created using Figma as a basis for my application. 
 ![prototype of loc collective](https://media.giphy.com/media/KeQxtu4ArJUoRDQNyK/giphy.gif)
 
+## Future Iterations
+In the future, I hope to add functionality to sort by distance, rating, or price. I'm also in the process of adding resources and information to the styles and resources pages. Finally, I hope to use PHP to implement a contact form. 
 
 ## Final Site 
 Here is a preview of the site: 
@@ -22,4 +24,4 @@ Here is a preview of the site:
 ![the loc collective website](https://media.giphy.com/media/RNbrMw5S2S8GFoA9hO/giphy.gif)
 
 ## Deployed Site
-I've deployed the site via Netlify using continuous deployment. You can view the current site via this link: https://loc-collective.netlify.app/. 
+I've deployed the site via Netlify using continuous deployment. You can view the current site via this link: https://loccollective.netlify.app/. 
