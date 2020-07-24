@@ -5,6 +5,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import SearchResultsContainer from "../SearchResultsContainer/SearchResultsContainer";
 import StylistPage from "../StylistPage/StylistPage";
 import WebContentContainer from "../WebContentContainer/WebContentContainer";
+import ContactForm from "../ContactForm/ContactForm";
 import { styles, about, resources } from "../../content-data";
 import { getSearchResults } from "../../apiCalls";
 import "./App.css";
@@ -58,7 +59,7 @@ class App extends Component {
               <WebContentContainer data={resources} name="Resources" />
             )}
           />
-          <Route path="/contact" />
+          <Route path="/contact" render={() => <ContactForm />} />
           <Route
             path="/stylist/:id"
             render={({ match }) => {
