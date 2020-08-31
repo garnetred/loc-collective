@@ -53,12 +53,7 @@ class App extends Component {
             path="/styles"
             render={() => <WebContentContainer data={styles} name="Styles" />}
           />
-          <Route
-            path="/resources"
-            render={() => (
-              <WebContentContainer data={resources} name="Resources" />
-            )}
-          />
+
           <Route path="/contact" render={() => <ContactForm />} />
           <Route
             path="/stylist/:id"

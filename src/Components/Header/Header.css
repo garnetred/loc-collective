@@ -18,19 +18,18 @@ nav {
 }
 
 .nav-items {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    
+  text-decoration: none;
+  color: white;
 }
 
 .header-link-container {
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 20%;
   margin: 0 2%;
 }
 
