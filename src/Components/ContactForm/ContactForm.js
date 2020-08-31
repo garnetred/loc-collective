@@ -54,6 +54,7 @@ class ContactForm extends Component {
           action="mailto:test@gmail.com"
           method="post"
         >
+          <p className="contact-form-labels">Name:</p>
           <input
             className="name-input"
             type="text"
@@ -64,6 +65,7 @@ class ContactForm extends Component {
             onChange={(e) => this.handleChange(e)}
             required
           />
+          <p className="contact-form-labels">Email:</p>
           <input
             className="email-input"
             type="text"
@@ -74,6 +76,7 @@ class ContactForm extends Component {
             onChange={(e) => this.handleChange(e)}
             required
           />
+          <p className="contact-form-labels">Comments:</p>
           <textarea
             className="message-input"
             type="textarea"

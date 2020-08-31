@@ -1,0 +1,36 @@
+.contact-form {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  width: 500px;
+}
+
+.contact-form-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin: 2% 0;
+}
+
+.contact-form-button {
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 0;
+}
+
+.name-input,
+.message-input,
+.email-input {
+  width: 100%;
+}
+
+.message-input {
+  height: 50%;
+}
