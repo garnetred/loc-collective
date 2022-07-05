@@ -38,7 +38,7 @@ const StylistPage = (props) => {
       });
     };
     beginFetchingStylist();
-  }, []);
+  }, [props.id]);
 
   const stringifiedRating = String(rating);
   const newRating = stringifiedRating.split("");
@@ -46,7 +46,7 @@ const StylistPage = (props) => {
   if (reviews) {
     allReviews = reviews.map((review) => {
       return (
-        <section className="single-review">
+        <section className="single-review" key={review.id}>
           <p className="review-text">{review.text}</p>
           <p className="reviewer-name">-{review.user.name}</p>
           <a
@@ -60,6 +60,14 @@ const StylistPage = (props) => {
         </section>
       );
     });
+  }
+
+  if (error) {
+    return (
+      <section className="stylist-container">
+        <p>{error}</p>
+      </section>
+    );
   }
   return (
     <section className="stylist-container">

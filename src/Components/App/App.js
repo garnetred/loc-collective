@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
@@ -6,7 +6,7 @@ import SearchResultsContainer from "../SearchResultsContainer/SearchResultsConta
 import StylistPage from "../StylistPage/StylistPage";
 import WebContentContainer from "../WebContentContainer/WebContentContainer";
 import ContactForm from "../ContactForm/ContactForm";
-import { styles, about, resources } from "../../content-data";
+import { styles, about } from "../../content-data";
 import { getSearchResults } from "../../apiCalls";
 import "./App.css";
 
