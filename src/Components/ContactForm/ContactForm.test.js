@@ -4,8 +4,8 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import ContactForm from "./ContactForm";
 
-describe("WebContentContainer", () => {
-  it("should render the WebContentContainer component", () => {
+describe("ContactForm", () => {
+  it("should render the ContactForm component", () => {
     const { getByText } = render(
       <BrowserRouter>
         <ContactForm />
