@@ -27,12 +27,10 @@ describe("App", () => {
       </BrowserRouter>
     );
     const aboutDetails =
-      "This site was designed to make the process of finding a loctician much easier for black people. In my own search for a loctician, I often noticed that it was difficult to filter out stylists who couldn’t do black hair or find stylists who specialized in locs other than traditional locs. It was even difficult to find people to start locs in less common ways. This site tries to make this process a little easier for others.";
+      "This site was designed to make the process of finding a loctician much easier for black users with locs. In my own search for a loctician, I often noticed that it was difficult to filter out stylists who couldn’t do black hair or find stylists who specialized in locs other than traditional locs. It was even difficult to find people to start locs in less common ways. This site tries to make this process a little easier for others.";
     const resourcesDetails = "Cultural Appropriation";
     fireEvent.click(getByText("about"));
     expect(getByText(aboutDetails)).toBeInTheDocument();
-    fireEvent.click(getByText("resources"));
-    expect(getByText(resourcesDetails)).toBeInTheDocument();
     fireEvent.click(getByText("styles"));
     expect(getByText("Interlocks")).toBeInTheDocument();
   });

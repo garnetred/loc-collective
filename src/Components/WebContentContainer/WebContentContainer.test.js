@@ -13,7 +13,7 @@ describe("WebContentContainer", () => {
       </BrowserRouter>
     );
     const content = getByText(
-      "If you have any questions, comments, or additional concerns, please feel free to reach out via the contact form, available here. You can also view my other work via GitHub."
+      "If you have any questions, comments, or additional concerns, please feel free to reach out via the contact form, available here. You can also view my other work via GitHub @garnetred."
     );
     expect(content).toBeInTheDocument();
   });

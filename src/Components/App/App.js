@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
@@ -6,81 +6,67 @@ import SearchResultsContainer from "../SearchResultsContainer/SearchResultsConta
 import StylistPage from "../StylistPage/StylistPage";
 import WebContentContainer from "../WebContentContainer/WebContentContainer";
 import ContactForm from "../ContactForm/ContactForm";
-import { styles, about, resources } from "../../content-data";
+import { styles, about } from "../../content-data";
 import { getSearchResults } from "../../apiCalls";
 import "./App.css";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      results: [],
-    };
-  }
+const App = () => {
+  const [style, setStyle] = useState("");
+  const [results, setResults] = useState([]);
+  const [location, setLocation] = useState("");
 
-  retrieveSearchResults = async (searchOptions) => {
+  const retrieveSearchResults = async (searchOptions) => {
     getSearchResults(searchOptions).then((response) => {
       try {
         if (response) {
-          return this.setState({
-            results: [...response.businesses],
-            location: searchOptions.location,
-            style: searchOptions.style,
-          });
+          setResults([...response.businesses]);
+          setLocation(searchOptions.location);
+          setStyle(searchOptions.style);
         } else {
           throw new Error();
         }
       } catch {
-        return this.setState({
-          results: [],
-          location: searchOptions.location,
-          style: searchOptions.style,
-        });
+        setResults([]);
+        setLocation(searchOptions.location);
+        setStyle(searchOptions.style);
       }
     });
   };
 
-  render() {
-    return (
-      <section className="App">
-        <Header />
-        <Switch>
-          <Route
-            path="/about"
-            render={() => <WebContentContainer data={about} name="About" />}
-          />
-          <Route
-            path="/styles"
-            render={() => <WebContentContainer data={styles} name="Styles" />}
-          />
+  return (
+    <section className="App">
+      <Header />
+      <Switch>
+        <Route
+          path="/about"
+          render={() => <WebContentContainer data={about} name="About" />}
+        />
+        <Route
+          path="/styles"
+          render={() => <WebContentContainer data={styles} name="Styles" />}
+        />
 
-          <Route path="/contact" render={() => <ContactForm />} />
-          <Route
-            path="/stylist/:id"
-            render={({ match }) => {
-              const { id } = match.params;
-              return <StylistPage id={id} />;
-            }}
-          />
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <>
-                <SearchForm
-                  retrieveSearchResults={this.retrieveSearchResults}
-                />
-                <SearchResultsContainer
-                  results={this.state.results}
-                  style={this.state.style}
-                />
-              </>
-            )}
-          ></Route>
-        </Switch>
-      </section>
-    );
-  }
-}
+        <Route path="/contact" render={() => <ContactForm />} />
+        <Route
+          path="/stylist/:id"
+          render={({ match }) => {
+            const { id } = match.params;
+            return <StylistPage id={id} />;
+          }}
+        />
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <>
+              <SearchForm retrieveSearchResults={retrieveSearchResults} />
+              <SearchResultsContainer results={results} style={style} />
+            </>
+          )}
+        ></Route>
+      </Switch>
+    </section>
+  );
+};
 
 export default App;
