@@ -19,7 +19,7 @@ const App = () => {
     getSearchResults(searchOptions).then((response) => {
       try {
         if (response) {
-          setResults([...response.businesses]);
+          setResults([...response.data.businesses]);
           setLocation(searchOptions.location);
           setStyle(searchOptions.style);
         } else {

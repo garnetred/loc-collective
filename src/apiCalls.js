@@ -22,18 +22,8 @@ export const fetchStylist = async (id) => {
 
 export const getSearchResults = async (terms) => {
   const searchTerm = terms.style.split(" ").join("+");
-  let myHeaders = new Headers();
-  myHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_API_KEY}`);
-  myHeaders.append("Content-Type", "application/json");
-
-  let requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-  };
-
   const info = await fetch(
-    `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${searchTerm}&category=(hairstylists, US)&location=${terms.location}&limit=50`,
-    requestOptions
+    `http://localhost:3001/api/search?term=${searchTerm}&location=${terms.location}`
   );
   const data = await info.json();
   return data;
