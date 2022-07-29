@@ -16,8 +16,6 @@ export const getSearchResults = async (terms) => {
     process.env.NODE_ENV !== "production"
       ? process.env.REACT_APP_DEV_API_URL
       : process.env.REACT_APP_PROD_API_URL;
-  console.log(process.env.REACT_APP_DEV_API_URL, "dev url");
-  console.log(process.env.NODE_ENV, "environment");
   const searchTerm = terms.style.split(" ").join("+");
   const info = await fetch(
     `${url}/api/search?term=${searchTerm}&location=${terms.location}`

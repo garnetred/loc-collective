@@ -15,6 +15,8 @@ const App = () => {
   const [results, setResults] = useState([]);
   const [location, setLocation] = useState("");
 
+  console.log(process.env.REACT_APP_DEV_API_URL, "dev url");
+
   const retrieveSearchResults = async (searchOptions) => {
     getSearchResults(searchOptions).then((response) => {
       try {
