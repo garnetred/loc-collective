@@ -20,15 +20,15 @@ const StylistPage = (props) => {
       fetchStylist(props.id).then((response) => {
         try {
           if (response) {
-            setPhone(response[0].display_phone || "N/A");
-            setAddress(response[0].location.display_address);
-            setName(response[0].name);
-            setRating(response[0].rating);
-            setReviewCount(response[0].review_count);
-            setPhotos(response[0].photos);
-            setPrice(response[0].price);
-            setUrl(response[0].url);
-            setReviews(response[1].reviews);
+            setPhone(response[0].data.display_phone || "N/A");
+            setAddress(response[0].data.location.display_address);
+            setName(response[0].data.name);
+            setRating(response[0].data.rating);
+            setReviewCount(response[0].data.review_count);
+            setPhotos(response[0].data.photos);
+            setPrice(response[0].data.price);
+            setUrl(response[0].data.url);
+            setReviews(response[1].data.reviews);
           } else {
             throw new Error();
           }
