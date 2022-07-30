@@ -24,4 +24,4 @@ Here is a preview of the site:
 ![the loc collective website](https://media.giphy.com/media/RNbrMw5S2S8GFoA9hO/giphy.gif)
 
 ## Deployed Site
-I've deployed the site via Netlify using continuous deployment. You can view the current site via this link: https://loccollective.netlify.app/. 
+I've deployed the site via Netlify using continuous deployment. You can view the current site via this link: https://loccollective.netlify.app/. The [backend node server](https://github.com/garnetred/loc-collective-backend) is deployed automatically using Heroku. 
