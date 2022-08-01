@@ -1,0 +1,22 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.loading-container::after {
+  content: "";
+  border: 10px solid #c4c4c4;
+  border-top-color: #d41134;
+  width: 75px;
+  height: 75px;
+  animation: loading 1s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}

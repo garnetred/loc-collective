@@ -31,6 +31,8 @@ const SearchForm = (props) => {
       props.retrieveSearchResults(data);
       setLocationError(false);
       setStyleError(false);
+      // set loading here if form submitted successfully
+      props.setIsLoading(true);
     } else {
       displayErrorMessage();
     }

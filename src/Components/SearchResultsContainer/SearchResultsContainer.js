@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Loading from "../Loading/Loading";
 import "./SearchResultsContainer.css";
 import SearchResults from "../SearchResults/SearchResults";
 
@@ -12,8 +13,8 @@ const SearchResultsContainer = (props) => {
   const onCheck = (e) => {
     //runs when first checkbox is clicked
     //should uncheck the other checkboxes
-    // should just update state, maybe? 
-    // will then add a sort to the allSearchResults 
+    // should just update state, maybe?
+    // will then add a sort to the allSearchResults
   };
 
   const allSearchResults = props.results.map((salon) => {
@@ -46,29 +47,15 @@ const SearchResultsContainer = (props) => {
         </label>
       </aside>
       <main className="all-search-results">
+        {props.isLoading && <Loading />}{" "}
         {props.style && !props.results.length ? (
           <p className="no-results">
             No results found. Please try a new search.
           </p>
         ) : null}
-        {props.style === undefined ? (
-          <>
-            <h3>Featured Loctician</h3>
-            <SearchResults
-              key={Math.round(100000)}
-              name="Bornu Locs - Natural Dreadlocks- Hair Products & Loc Extensions"
-              image_url="https://s3-media2.fl.yelpcdn.com/bphoto/0dZbm39TYA1r2FfpwdPi7Q/o.jpg"
-              url="https://www.yelp.com/biz/bornu-locs-natural-dreadlocks-hair-products-and-loc-extensions-atlanta?adjust_creative=4b4u9NSjrFIuzcuj_TKnAQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=4b4u9NSjrFIuzcuj_TKnAQ"
-              review_count={20}
-              distance={10079.201499705512}
-              rating={4.5}
-              price="$$"
-              id="_Qde9mvL7hddZTiT1YMN8Q"
-            />
-          </>
-        ) : (
-          allSearchResults
-        )}
+        {props.style && props.results.length && !props.isLoading
+          ? allSearchResults
+          : null}
       </main>
     </section>
   );
@@ -77,6 +64,7 @@ const SearchResultsContainer = (props) => {
 SearchResultsContainer.propTypes = {
   results: PropTypes.array,
   style: PropTypes.string,
+  isLoading: PropTypes.bool,
 };
 
 export default SearchResultsContainer;

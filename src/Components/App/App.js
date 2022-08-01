@@ -14,6 +14,7 @@ const App = () => {
   const [style, setStyle] = useState("");
   const [results, setResults] = useState([]);
   const [location, setLocation] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const retrieveSearchResults = async (searchOptions) => {
     getSearchResults(searchOptions).then((response) => {
@@ -22,6 +23,7 @@ const App = () => {
           setResults([...response.data.businesses]);
           setLocation(searchOptions.location);
           setStyle(searchOptions.style);
+          setIsLoading(false);
         } else {
           throw new Error();
         }
@@ -59,8 +61,12 @@ const App = () => {
           path="/"
           render={() => (
             <>
-              <SearchForm retrieveSearchResults={retrieveSearchResults} />
-              <SearchResultsContainer results={results} style={style} />
+              <SearchForm retrieveSearchResults={retrieveSearchResults} setIsLoading={setIsLoading} />
+              <SearchResultsContainer
+                results={results}
+                style={style}
+                isLoading={isLoading}
+              />
             </>
           )}
         ></Route>
