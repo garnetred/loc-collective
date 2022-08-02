@@ -48,7 +48,7 @@ const SearchResultsContainer = (props) => {
       </aside>
       <main className="all-search-results">
         {props.isLoading && <Loading />}{" "}
-        {props.style && !props.results.length ? (
+        {props.style && !props.results.length && !props.isLoading ? (
           <p className="no-results">
             No results found. Please try a new search.
           </p>

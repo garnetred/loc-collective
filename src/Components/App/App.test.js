@@ -36,6 +36,22 @@ describe("App", () => {
   });
 
   it("should show no results found if there are no appropriate matches", async () => {
+    const { getByText, getByTestId, getByPlaceholderText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    fireEvent.change(getByTestId("select"), {
+      target: { value: "locs+dreadlocks" },
+    });
+
+    fireEvent.change(getByPlaceholderText("location"), {
+      target: { value: "Boston" },
+    });
+
+    fireEvent.click(getByText("search"));
+
     getSearchResults.mockReturnValue(
       Promise.resolve({
         businesses: [],
@@ -45,22 +61,6 @@ describe("App", () => {
         total: 0,
       })
     );
-    const { getByText, getByTestId, getByPlaceholderText } = render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
-    );
-
-    fireEvent.change(getByTestId("select"), {
-      target: { value: "locs+dreadlocks" },
-    });
-
-    fireEvent.change(getByPlaceholderText("location"), {
-      target: { value: "Boston" },
-    });
-
-    fireEvent.click(getByText("search"));
-
     await waitFor(() =>
       expect(
         getByText("No results found. Please try a new search.")
@@ -68,7 +68,7 @@ describe("App", () => {
     );
   });
 
-  it("should show results found if there are appropriate matches", async () => {
+  it.skip("should show loading spinner while searching", async () => {
     getSearchResults.mockResolvedValue(salons);
     const { getByText, getByTestId, getByPlaceholderText } = render(
       <MemoryRouter>
@@ -85,12 +85,30 @@ describe("App", () => {
     });
 
     fireEvent.click(getByText("search"));
+  });
 
-    await waitFor(() => expect(getByText("Bornu Locs")).toBeInTheDocument());
+  it("should show results found if there are appropriate matches", async () => {
+    const { getByText, getByTestId, getByPlaceholderText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    fireEvent.change(getByTestId("select"), {
+      target: { value: "locs+dreadlocks" },
+    });
+
+    fireEvent.change(getByPlaceholderText("location"), {
+      target: { value: "Boston" },
+    });
+
+    fireEvent.click(getByText("search"));
+    getSearchResults.mockResolvedValue(salons);
+
+    await waitFor(() => expect(getByText("Zahara Locs")).toBeInTheDocument());
   });
 
   it("should show detailed results after a user clicks on a result", async () => {
-    getSearchResults.mockResolvedValue(salons);
     fetchStylist.mockReturnValue(Promise.resolve(singleSalonBusinessFetch));
     const { getByText, getByTestId, getByPlaceholderText } = render(
       <MemoryRouter>
@@ -107,6 +125,8 @@ describe("App", () => {
     });
 
     fireEvent.click(getByText("search"));
+
+   await getSearchResults.mockResolvedValue(salons);
 
     await waitFor(() => expect(getByText("Bornu Locs")).toBeInTheDocument());
 
