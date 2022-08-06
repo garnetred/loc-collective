@@ -19,6 +19,7 @@ nav {
 
 .nav-items {
   font-size: 30px;
+  margin: 0 10px;
 }
 
 a {
@@ -28,7 +29,7 @@ a {
 
 .header-link-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   width: 20%;
   margin: 0 2%;
 }
