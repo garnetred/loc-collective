@@ -51,6 +51,7 @@ const ContactForm = () => {
         data-netlify="true"
       >
         <p className="contact-form-labels">Name:</p>
+        <input type="hidden" name="form-name" value="contact-form" />
         <input
           className="name-input"
           type="text"
