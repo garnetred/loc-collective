@@ -44,9 +44,10 @@ const ContactForm = () => {
     <section className="contact-form-container">
       <form
         className="contact-form"
+        form-name="contact-form"
         data-testid="contactform"
-        action="mailto:test@gmail.com"
         method="post"
+        data-netlify="true"
       >
         <p className="contact-form-labels">Name:</p>
         <input
