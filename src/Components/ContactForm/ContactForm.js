@@ -44,9 +44,9 @@ const ContactForm = () => {
     <section className="contact-form-container">
       <form
         className="contact-form"
-        form-name="contact-form"
+        name="contact-form"
         data-testid="contactform"
-        method="post"
+        method="POST"
         data-netlify="true"
       >
         <p className="contact-form-labels">Name:</p>
