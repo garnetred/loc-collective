@@ -23,6 +23,7 @@ const ContactForm = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    alert("your message has been sent successfully");
     // if (this.state.location !== "" && this.state.style !== "") {
     //   this.props.retrieveSearchResults(this.state);
     //   this.setState({ locationError: false, styleError: false });
@@ -85,7 +86,7 @@ const ContactForm = () => {
         <button
           type="submit"
           className="contact-form-button"
-          onClick={submitForm}
+          // onClick={submitForm}
         >
           submit
         </button>
