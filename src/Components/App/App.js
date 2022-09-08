@@ -47,7 +47,6 @@ const App = () => {
           path="/styles"
           render={() => <WebContentContainer data={styles} name="Styles" />}
         />
-
         <Route path="/contact" render={() => <ContactForm />} />
         <Route
           path="/stylist/:id"
