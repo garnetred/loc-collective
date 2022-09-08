@@ -23,6 +23,7 @@ const ContactForm = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    alert("your message has been sent successfully");
     // if (this.state.location !== "" && this.state.style !== "") {
     //   this.props.retrieveSearchResults(this.state);
     //   this.setState({ locationError: false, styleError: false });
@@ -44,11 +45,13 @@ const ContactForm = () => {
     <section className="contact-form-container">
       <form
         className="contact-form"
+        name="contact-form"
         data-testid="contactform"
-        action="mailto:test@gmail.com"
-        method="post"
+        method="POST"
+        data-netlify="true"
       >
         <p className="contact-form-labels">Name:</p>
+        <input type="hidden" name="form-name" value="contact-form" />
         <input
           className="name-input"
           type="text"
@@ -84,7 +87,7 @@ const ContactForm = () => {
         <button
           type="submit"
           className="contact-form-button"
-          onClick={submitForm}
+          // onClick={submitForm}
         >
           submit
         </button>
