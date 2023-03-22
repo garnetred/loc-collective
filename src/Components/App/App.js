@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import SearchForm from "../SearchForm/SearchForm";
 import SearchResultsContainer from "../SearchResultsContainer/SearchResultsContainer";
 import StylistPage from "../StylistPage/StylistPage";
@@ -70,6 +71,7 @@ const App = () => {
           )}
         ></Route>
       </Switch>
+      <Footer />
     </section>
   );
 };
