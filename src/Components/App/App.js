@@ -5,11 +5,9 @@ import Footer from '../Footer/Footer';
 import SearchForm from '../SearchForm/SearchForm';
 import SearchResultsContainer from '../SearchResultsContainer/SearchResultsContainer';
 import StylistPage from '../StylistPage/StylistPage';
-import WebContentContainer from '../WebContentContainer/WebContentContainer';
 import About from '../About/About';
 import Styles from '../Styles/Styles';
 import ContactForm from '../ContactForm/ContactForm';
-import { styles } from '../../content-data';
 import { getSearchResults } from '../../apiCalls';
 import './App.css';
 
