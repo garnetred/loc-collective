@@ -1,13 +1,22 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import "./Footer.css";
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="loc-collective-footer">
-        <p>Designed and built by
-            <a href="https://www.decemberdevelopment.com">December Design & Development</a>
-            </p>
+      <section className="footer-container">
+        <p>Designed and built by</p>
+        <a
+          href="https://www.decemberdevelopment.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="production-link"
+        >
+          December Design & Development
+          <span className="period">.</span>
+        </a>
+      </section>
     </footer>
   );
 };

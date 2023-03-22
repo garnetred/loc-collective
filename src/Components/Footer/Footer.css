@@ -1,0 +1,40 @@
+.loc-collective-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Didact Gothic', sans-serif;
+  background-color: #d41134;
+  color: white;
+  align-items: center;
+  height: 10%;
+  font-size: 15px;
+  /* margin: 0 10px; */
+  width: 100vw;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  width: 31%;
+  text-align: left;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.production-link {
+  font-weight: bolder;
+  font-size: 20px;
+  /* margin-right: ; */
+  border-bottom: 2px solid transparent;
+}
+
+.production-link:hover,
+.production-link:focus {
+  border-bottom: 2px solid white;
+}
+
+.period {
+  font-size: 20px;
+}
