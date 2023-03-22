@@ -7,8 +7,9 @@ import SearchResultsContainer from '../SearchResultsContainer/SearchResultsConta
 import StylistPage from '../StylistPage/StylistPage';
 import WebContentContainer from '../WebContentContainer/WebContentContainer';
 import About from '../About/About';
+import Styles from '../Styles/Styles';
 import ContactForm from '../ContactForm/ContactForm';
-import { styles, about } from '../../content-data';
+import { styles } from '../../content-data';
 import { getSearchResults } from '../../apiCalls';
 import './App.css';
 
@@ -42,10 +43,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route path="/about" render={() => <About />} />
-        <Route
-          path="/styles"
-          render={() => <WebContentContainer data={styles} name="Styles" />}
-        />
+        <Route path="/styles" render={() => <Styles />} />
         <Route path="/contact" render={() => <ContactForm />} />
         <Route
           path="/stylist/:id"
