@@ -1,0 +1,14 @@
+.about-section {
+  width: 50%;
+  margin: 5% auto;
+  min-height: 100vh;
+}
+
+.about-link {
+  color: #d41134;
+}
+
+.about-link:focus,
+.about-link:hover {
+  text-decoration: underline;
+}
