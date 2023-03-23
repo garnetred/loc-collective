@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <footer className="loc-collective-footer">
       <section className="footer-container">
-        <p>Designed and built by</p>
+        <p>designed and built by</p>
         <a
           href="https://www.decemberdevelopment.com"
           target="_blank"
           rel="noopener noreferrer"
           className="production-link"
         >
-          December Design & Development
+          december design & development
           <span className="period">.</span>
         </a>
       </section>
