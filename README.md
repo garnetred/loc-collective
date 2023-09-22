@@ -2,6 +2,9 @@
 
 This is a website that uses the Yelp API in order to create a national directory of locticians for black people with locs in the United States.
 
+## Donate 
+You can support my work by [buying me a coffee](https://www.buymeacoffee.com/decemberthedeveloper) to help me continue to make free, user-friendly websites.
+
 ## Tools 
 This application was bootstrapped with Create React App, and uses ReactJS, JavaScript, HTML, and CSS. I used the Jest testing library along with React Testing Library to test each component. I created a low fidelity wireframe, mockup, and prototype using Figma. 
 
