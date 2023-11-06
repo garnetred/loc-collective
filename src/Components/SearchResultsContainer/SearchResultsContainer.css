@@ -1,31 +1,31 @@
 .search-results-container {
-    width: 80%;
-    margin: 2% auto;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+  width: 80%;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  visibility: hidden;
 }
 
-
 .sort-by-box {
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    height: 25%;
-    border: 1px solid #C4C4C4;
-    border-radius: 5px;
-    padding: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 25%;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  padding: 2%;
 }
 
 .sort-by-box > p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .sort-by-box > label {
-    margin: 4% 0;
+  margin: 4% 0;
 }
 
 .all-search-results {
-    width: 70%;
-    margin: 2%;
+  width: 70%;
+  margin: 2%;
 }

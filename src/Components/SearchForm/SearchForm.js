@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import "./SearchForm.css";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import './SearchForm.css';
 
 const SearchForm = (props) => {
-  const [location, setLocation] = useState("");
-  const [style, setStyle] = useState("");
+  const [location, setLocation] = useState('');
+  const [style, setStyle] = useState('');
   const [locationError, setLocationError] = useState(false);
   const [styleError, setStyleError] = useState(false);
 
@@ -17,17 +17,17 @@ const SearchForm = (props) => {
 
   const handleChange = (e) => {
     const { name } = e.target;
-    if (name === "location") {
+    if (name === 'location') {
       setLocation(e.target.value);
     }
-    if (name === "style") {
+    if (name === 'style') {
       setStyle(e.target.value);
     }
   };
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (location !== "" && style !== "") {
+    if (location !== '' && style !== '') {
       props.retrieveSearchResults(data);
       setLocationError(false);
       setStyleError(false);
@@ -39,11 +39,11 @@ const SearchForm = (props) => {
   };
 
   const displayErrorMessage = () => {
-    if (location === "") {
+    if (location === '') {
       setLocationError(true);
     }
 
-    if (style === "") {
+    if (style === '') {
       setStyleError(true);
     }
   };
@@ -59,7 +59,7 @@ const SearchForm = (props) => {
         ></img>
         <section className="text-container">
           <h2>Spend less time searching for a loctician</h2>
-          <h2>Search locticians across the US by hairstyle</h2>
+          <h2>Search locticians across the United States by hairstyle</h2>
         </section>
       </section>
 
@@ -72,7 +72,7 @@ const SearchForm = (props) => {
           aria-label="style"
         >
           <option value="" selected disabled>
-            -- Please select a style --{" "}
+            -- Please select a style --{' '}
           </option>
           <option value="locs+dreadlocks">traditional locs</option>
           <option value="sisterlocks">sisterlocks</option>
