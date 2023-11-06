@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Styles = () => {
   return (
     <section className="style-section-container">
+      <h2 className="about-header">Styles</h2>
       <h3 className="style-header">Traditional locs</h3>
       <figure className="style-figure">
         <img

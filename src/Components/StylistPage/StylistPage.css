@@ -64,28 +64,28 @@ h3 {
 }
 
 .stylist-info-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .stylist-info-container * {
-    margin: 0;
+  margin: 0;
 }
 
 .reviews {
-    margin-left: 5%;
+  margin-left: 5%;
 }
 
 .single-review {
-    margin: 4% 0;
+  margin: 4% 0;
 }
 
 .review-link {
-    color: #094093;
-    font-weight: bold;
-    margin: 2% 0;
+  color: #094093;
+  font-weight: bold;
+  margin: 2% 0;
 }
 
 .review-text {
-    font-style: italic;
+  font-style: italic;
 }
