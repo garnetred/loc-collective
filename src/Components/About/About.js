@@ -10,15 +10,30 @@ const About = () => {
         <p className="about-paragraph-1">
           This site was designed to make the process of finding a loctician much
           easier for black people with locs. In my own search for a loctician, I
-          often noticed that it was difficult to filter out stylists who do not
-          work with my hair texture or to find stylists who specialized in locs
-          beyond traditional locs. It was even difficult to find people to start
-          locs in less common ways. This site tries to make this process a
-          little easier for others.
+          noticed how difficult it was to find a loctician online in a new city.
+          It was also difficult to filter out stylists who do not work with my
+          hair texture and to find stylists familiar with interlocking. I also
+          had a hard time finding locticians who accepted transfer clients. This
+          site makes it easier to find the perfect loctician for you and your
+          locs.
         </p>
+        <p>
+          loc collective searches Yelp to find you a loctician based on hair
+          specialty. Currently you can search for locticians who specialize in
+          the following areas:
+        </p>
+        <ul>
+          <li>traditional locs</li>
+          <li>sisterlocks</li>
+          <li>brotherlocks</li>
+          <li>brotherlocks</li>
+          <li>interlocks</li>
+          <li>microlocs</li>
+          <li>faux locs</li>
+        </ul>
         <p className="about-paragraph-2">
-          If you have any questions, comments, or concerns, please feel free to
-          reach out via the{' '}
+          If you have any feedback or are interested in being matched with a
+          loctician, please feel free to reach out via the{' '}
           <Link to="/contact" className="about-link">
             contact form
           </Link>
