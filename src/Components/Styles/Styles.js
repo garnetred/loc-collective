@@ -11,7 +11,7 @@ const Styles = () => {
         <img
           className="style-image"
           src="/images/locs.jpeg"
-          alt="An example of sisterlocks."
+          alt="An example of traditional locs."
         ></img>
         <figcaption>
           Photo by{' '}
@@ -99,6 +99,26 @@ const Styles = () => {
       </section>
       <h3 className="style-header">Faux locs</h3>
       <section className="style-info">
+        <figure className="style-figure">
+          <img
+            className="style-image"
+            src="/images/faux-locs.jpeg"
+            alt="An example of faux locs."
+          ></img>
+          <figcaption>
+            Photo by{' '}
+            <a href="https://unsplash.com/@jabarib" className="style-link">
+              Jabari Timothy
+            </a>{' '}
+            on{' '}
+            <a
+              href="https://unsplash.com/photos/woman-in-black-shirt-wearing-white-cowboy-hat-and-sunglasses-UyEgIEfLen8"
+              className="style-link"
+            >
+              Unsplash
+            </a>
+          </figcaption>
+        </figure>
         <p className="style-paragraph">
           Faux loc hair extensions that look like locs. They often look like
           traditional locs, but have a shinier appearance. This can be a good
