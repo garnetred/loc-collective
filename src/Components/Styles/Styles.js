@@ -1,5 +1,6 @@
 import React from 'react';
 import './Styles.css';
+import { Link } from 'react-router-dom';
 
 const Styles = () => {
   return (
@@ -27,18 +28,23 @@ const Styles = () => {
           maintain other types of locs as well.
         </p>
       </section>
-      <h3 className="style-header">Sisterlocks</h3>
+      <h3 className="style-header">Sisterlocks/Brotherlocks</h3>
       <section className="style-info">
+        <img
+          className="style-img"
+          src="../public/images/sisterlocks.jpeg"
+          alt="An example of sisterlocks."
+        ></img>
         <p className="style-paragraph">
           Sisterlocks are micro locs (very small locs) They come in several
           different sizes. Since sisterlocks are a patented technique, they can
           be expensive to install and maintain, but they offer a lot of
           versatility in terms of hair styling options and the same benefits as
-          interlocking above.
+          interlocking above. You can also find a sisterlocks consultant via the
+          <a href="https://www.sisterlocks.com/certified-consultant-registry.html">
+            official certified consultant registry.
+          </a>
         </p>
-      </section>
-      <h3 className="style-header">Brotherlocks</h3>
-      <section className="style-info">
         <p className="style-paragraph">
           Brotherlocks are larger sisterlocks - they may not always be
           considered microlocs. They're also a patented technique and look
@@ -48,8 +54,8 @@ const Styles = () => {
       <h3 className="style-header">Microlocs</h3>
       <section className="style-info">
         <p className="style-paragraph">
-          Microlocs very small locs. Someone with microlocs can have upwards of
-          500+ locs. Usually microlocs are not maintained by palm rolling.
+          Microlocs are very small locs. Someone with microlocs can have upwards
+          of 500+ locs. Usually microlocs are maintained via interlocking.
         </p>
       </section>
       <h3 className="style-header">Faux locs</h3>
@@ -58,6 +64,16 @@ const Styles = () => {
           Faux loc hair extensions that look like locs. They often look like
           traditional locs, but have a shinier appearance. This can be a good
           way to test out locs without making the commitment.
+        </p>
+      </section>
+      <h3 className="style-header">Ready to Get Started?</h3>
+      <section className="style-info">
+        <p className="style-paragraph">
+          Search for a loctician by loc type in the{' '}
+          <Link to="/" className="directory-link">
+            directory
+          </Link>{' '}
+          today.
         </p>
       </section>
     </section>
