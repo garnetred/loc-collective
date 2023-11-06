@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import Loading from "../Loading/Loading";
-import "./SearchResultsContainer.css";
-import SearchResults from "../SearchResults/SearchResults";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Loading from '../Loading/Loading';
+import './SearchResultsContainer.css';
+import SearchResults from '../SearchResults/SearchResults';
 
 const SearchResultsContainer = (props) => {
   //need to create a checked function that sorts by only one functionality at a time
@@ -47,7 +47,7 @@ const SearchResultsContainer = (props) => {
         </label>
       </aside>
       <main className="all-search-results">
-        {props.isLoading && <Loading />}{" "}
+        {props.isLoading && <Loading />}{' '}
         {props.style && !props.results.length && !props.isLoading ? (
           <p className="no-results">
             No results found. Please try a new search.
