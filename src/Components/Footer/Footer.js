@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="loc-collective-footer">
       <section className="footer-container">
-        <p>designed and built by</p>
+        <p>site by</p>
         <a
           href="https://www.decemberdevelopment.com"
           target="_blank"
