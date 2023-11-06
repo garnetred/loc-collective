@@ -6,6 +6,26 @@ const Styles = () => {
   return (
     <section className="style-section-container">
       <h3 className="style-header">Traditional locs</h3>
+      <figure className="style-figure">
+        <img
+          className="style-image"
+          src="/images/locs.jpeg"
+          alt="An example of sisterlocks."
+        ></img>
+        <figcaption>
+          Photo by{' '}
+          <a href="https://unsplash.com/@itslarryg" className="style-link">
+            Larry George II
+          </a>{' '}
+          on{' '}
+          <a
+            href="https://unsplash.com/photos/person-in-grey-crew-neck-shirt-rZUUJ-WyAM0"
+            className="style-link"
+          >
+            Unsplash
+          </a>
+        </figcaption>
+      </figure>
       <section className="style-info">
         <p className="style-paragraph">
           Traditional locs are a long-term hair style that can be started using
@@ -30,11 +50,29 @@ const Styles = () => {
       </section>
       <h3 className="style-header">Sisterlocks/Brotherlocks</h3>
       <section className="style-info">
-        <img
-          className="style-img"
-          src="../public/images/sisterlocks.jpeg"
-          alt="An example of sisterlocks."
-        ></img>
+        <figure className="style-figure">
+          <img
+            className="style-image"
+            src="/images/sisterlocks.jpeg"
+            alt="An example of sisterlocks."
+          ></img>
+          <figcaption>
+            Photo by{' '}
+            <a
+              href="https://unsplash.com/@samanthasophia"
+              className="style-link"
+            >
+              Samantha Sophia
+            </a>{' '}
+            on{' '}
+            <a
+              href="https://unsplash.com/photos/woman-taking-selfie-inside-N-MYXygSKYg"
+              className="style-link"
+            >
+              Unsplash
+            </a>
+          </figcaption>
+        </figure>
         <p className="style-paragraph">
           Sisterlocks are micro locs (very small locs) They come in several
           different sizes. Since sisterlocks are a patented technique, they can
@@ -70,7 +108,7 @@ const Styles = () => {
       <section className="style-info">
         <p className="style-paragraph">
           Search for a loctician by loc type in the{' '}
-          <Link to="/" className="directory-link">
+          <Link to="/" className="style-link">
             directory
           </Link>{' '}
           today.

@@ -4,6 +4,14 @@
   min-height: 100vh;
 }
 
-.directory-link {
+.style-link {
   color: #d41134;
+}
+
+.style-image {
+  width: 40%;
+}
+
+.style-figure {
+  margin: 0;
 }
