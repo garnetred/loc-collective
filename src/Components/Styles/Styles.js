@@ -29,13 +29,13 @@ const Styles = () => {
       </figure>
       <section className="style-info">
         <p className="style-paragraph">
-          Traditional locs are a long-term hair style that can be started using
-          many methods - most popularly, twists or comb coils. Traditional locs
-          are normally retwisted using palm rolling - however, it's possible to
-          get traditional locs and then switch to a different retightening
-          technique. Traditional locs are larger than other locs and someone
-          with traditional locs will have fewer locs than someone with micro
-          locs.
+          Traditional locs (also called dreadlocks or rastas) are a long-term
+          hair style that can be started using many methods - most popularly,
+          twists or comb coils. Traditional locs are normally retwisted using
+          palm rolling - however, it's possible to get traditional locs and then
+          switch to a different retightening technique. Traditional locs are
+          larger than other locs and someone with traditional locs will have
+          fewer locs than someone with micro locs.
         </p>
       </section>
       <h3 className="style-header">Interlocks</h3>

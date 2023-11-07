@@ -23,9 +23,8 @@ const About = () => {
           the following areas:
         </p>
         <ul>
-          <li>traditional locs (also called dreadlocks)</li>
+          <li>traditional locs</li>
           <li>sisterlocks</li>
-          <li>brotherlocks</li>
           <li>brotherlocks</li>
           <li>interlocks</li>
           <li>microlocs</li>
