@@ -15,13 +15,20 @@ const Styles = () => {
         ></img>
         <figcaption>
           Photo by{' '}
-          <a href="https://unsplash.com/@itslarryg" className="style-link">
+          <a
+            href="https://unsplash.com/@itslarryg"
+            className="style-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Larry George II
           </a>{' '}
           on{' '}
           <a
             href="https://unsplash.com/photos/person-in-grey-crew-neck-shirt-rZUUJ-WyAM0"
             className="style-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Unsplash
           </a>
@@ -62,6 +69,8 @@ const Styles = () => {
             <a
               href="https://unsplash.com/@samanthasophia"
               className="style-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Samantha Sophia
             </a>{' '}
@@ -69,6 +78,8 @@ const Styles = () => {
             <a
               href="https://unsplash.com/photos/woman-taking-selfie-inside-N-MYXygSKYg"
               className="style-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Unsplash
             </a>
@@ -112,13 +123,20 @@ const Styles = () => {
           ></img>
           <figcaption>
             Photo by{' '}
-            <a href="https://unsplash.com/@jabarib" className="style-link">
+            <a
+              href="https://unsplash.com/@jabarib"
+              className="style-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Jabari Timothy
             </a>{' '}
             on{' '}
             <a
               href="https://unsplash.com/photos/woman-in-black-shirt-wearing-white-cowboy-hat-and-sunglasses-UyEgIEfLen8"
               className="style-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Unsplash
             </a>
