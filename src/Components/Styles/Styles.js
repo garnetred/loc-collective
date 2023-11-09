@@ -79,8 +79,13 @@ const Styles = () => {
           different sizes. Since sisterlocks are a patented technique, they can
           be expensive to install and maintain, but they offer a lot of
           versatility in terms of hair styling options and the same benefits as
-          interlocking above. You can also find a sisterlocks consultant via the
-          <a href="https://www.sisterlocks.com/certified-consultant-registry.html">
+          interlocking above. You can also find a sisterlocks consultant via the{' '}
+          <a
+            href="https://www.sisterlocks.com/certified-consultant-registry.html"
+            className="style-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             official certified consultant registry.
           </a>
         </p>
