@@ -89,10 +89,18 @@
   .search-form {
     flex-direction: column;
   }
+
+  .text-container {
+    left: 0;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 767px) {
   .search-form {
     flex-direction: column;
+  }
+
+  .text-container {
+    left: 0;
   }
 }
