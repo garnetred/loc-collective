@@ -91,10 +91,22 @@
   }
   .search-form {
     flex-direction: column;
+    width: 75%;
+    align-items: normal;
   }
 
   .text-container {
     left: 0;
+    font-size: 0.5rem;
+    width: 100%;
+  }
+
+  .search-form-input {
+    margin: 1% 0;
+  }
+
+  .search-form-button {
+    width: 50%;
   }
 }
 
