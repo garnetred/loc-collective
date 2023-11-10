@@ -1,16 +1,42 @@
-body, html {
+body,
+html {
   height: 100vh;
   width: 100%;
 }
 
-.App, #root {
+.App,
+#root {
   height: 100vh;
   width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 600px) {
+  .App,
+  #root {
+    width: 100%;
+    overflow-x: hidden;
   }
 }
 
+@media only screen and (min-width: 601px) {
+  .App,
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .App,
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .App,
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
