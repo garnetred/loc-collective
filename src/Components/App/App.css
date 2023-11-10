@@ -1,7 +1,11 @@
-body,
 html {
-  height: 100vh;
+  min-height: 100%;
+  width: 1200px;
+}
+
+body {
   width: 100%;
+  height: 100vh;
 }
 
 .App,
@@ -11,32 +15,44 @@ html {
 }
 
 @media only screen and (max-width: 600px) {
+  html {
+    min-height: 100%;
+    width: 100%;
+  }
+
   .App,
   #root {
     width: 100%;
-    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    height: 100vh;
   }
 }
 
 @media only screen and (min-width: 601px) {
   .App,
-  #root {
+  #root,
+  body,
+  html {
     width: 100%;
-    overflow-x: hidden;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .App,
-  #root {
+  #root,
+  body,
+  html {
     width: 100%;
-    overflow-x: hidden;
   }
 }
 @media only screen and (min-width: 1200px) {
   .App,
-  #root {
+  #root,
+  body,
+  html {
     width: 100%;
-    overflow-x: hidden;
   }
 }

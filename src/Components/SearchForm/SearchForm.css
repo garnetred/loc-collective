@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 .search-form-container {
   height: 65%;
@@ -41,7 +41,7 @@
 }
 
 .text-container > h2 {
-  font-family: "Didact Gothic", sans-serif;
+  font-family: 'Didact Gothic', sans-serif;
 
   font-weight: 800;
 }
@@ -83,4 +83,10 @@
 
 .form-error-message {
   color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+  }
 }

@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: 'Didact Gothic', sans-serif;
   background-color: #d41134;
   color: white;
   align-items: center;
@@ -36,4 +36,11 @@ a {
 
 .active {
   border-bottom: 2px solid white;
+}
+
+@media and screen (max-width: 600px) {
+  nav {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
