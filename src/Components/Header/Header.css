@@ -53,6 +53,7 @@ a {
 
   .loc-collective {
     margin: 0;
+    padding-left: 1%;
   }
 }
 @media only screen and (min-width: 601px) {
@@ -70,8 +71,10 @@ a {
 
   .loc-collective {
     margin: 0;
+    padding-left: 1%;
   }
 }
+
 @media only screen and (min-width: 768px) and (max-width: 999px) {
   nav {
     width: 100%;
@@ -83,15 +86,16 @@ a {
 
   .header-link-container {
     display: flex;
-    width: 30%;
+    width: 35%;
   }
 
   .loc-collective {
     margin: 0;
+    padding-left: 1%;
   }
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 1999px) {
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
   nav {
     width: 100%;
   }
@@ -102,7 +106,7 @@ a {
 
   .header-link-container {
     display: flex;
-    width: 30%;
+    width: 25%;
   }
 
   .loc-collective {
