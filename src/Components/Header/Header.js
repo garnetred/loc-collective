@@ -25,7 +25,13 @@ const Header = (props) => {
         </NavLink>
       </section>
       <section className="header-hamburger">
-        <Hamburger onClick={openModal} />
+        <Hamburger
+          onClick={openModal}
+          onKeyDown={openModal}
+          role="button"
+          alt="Open menu"
+          tabIndex={0}
+        />
       </section>
     </nav>
   );

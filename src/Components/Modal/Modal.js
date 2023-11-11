@@ -12,8 +12,15 @@ const Modal = (props) => {
     <nav className="modal-nav">
       <CloseIcon
         className="close-icon"
-        alt="Close Modal"
+        alt="Close menu"
         onClick={closeModal}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            closeModal();
+          }
+        }}
+        role="button"
+        tabIndex={0}
       />
       <ul className="modal-nav-list">
         <NavLink className="modal-nav-items" to="/about" onClick={closeModal}>
