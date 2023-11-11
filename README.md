@@ -19,7 +19,7 @@ I used the below prototype created using Figma as a basis for my application.
 https://github.com/garnetred/loc-collective/assets/59572865/4e90f7ed-859e-44b8-a0da-ba54d1bf862a
 
 ## Future Iterations
-In the future, I hope to add functionality to sort by distance, rating, or price. I also plan to add mobile and tablet responsiveness in the future. Another idea I'm considering is expanding the directory to work outside of the US as well - the difficulty here is the different terminology used to refer to locs all over the world. 
+In the future, I hope to add functionality to sort by distance, rating, or price. Another idea I'm considering is expanding the directory to work outside of the US as well - the difficulty here is the different terminology used to refer to locs all over the world. 
 
 ## Final Site
 Here's a demo of the current iteration of the site: 
