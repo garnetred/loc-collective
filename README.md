@@ -24,7 +24,8 @@ In the future, I hope to add functionality to sort by distance, rating, or price
 ## Final Site
 Here's a demo of the current iteration of the site: 
 
-https://github.com/garnetred/loc-collective/assets/59572865/23f4159c-a1ba-4728-ad87-5c00333bb56d
+https://github.com/garnetred/loc-collective/assets/59572865/e264ab05-0b24-4df9-ba23-6bb910bdd901
+
 
 ## Deployed Site
 I've deployed the site via Netlify using continuous deployment. You can view the current site [here](https://loccollective.com). The [backend node server](https://github.com/garnetred/loc-collective-backend) is deployed continuously using Render.
