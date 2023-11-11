@@ -89,3 +89,102 @@ h3 {
 .review-text {
   font-style: italic;
 }
+
+@media only screen and (max-width: 600px) {
+  .stylist-content {
+    flex-direction: column;
+  }
+
+  .stylist-name-and-rating {
+    flex-direction: column;
+  }
+
+  .stylist-header {
+    align-items: normal;
+    margin: 1% 0;
+  }
+
+  .stylist-container {
+    height: fit-content;
+    width: 90%;
+  }
+
+  .stylist-company-image {
+    width: 70%;
+  }
+
+  .stylist-info-container > article {
+    margin-left: 0;
+  }
+
+  .reviews {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .stylist-content {
+    flex-direction: column;
+  }
+
+  .stylist-name-and-rating {
+    flex-direction: column;
+  }
+
+  .stylist-header {
+    align-items: normal;
+    margin: 1% 0;
+  }
+
+  .stylist-container {
+    height: fit-content;
+    width: 90%;
+  }
+
+  .stylist-company-image {
+    width: 70%;
+  }
+
+  .stylist-info-container > article {
+    margin-left: 0;
+  }
+
+  .reviews {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .star-rating {
+    margin: 0;
+  }
+
+  .stylist-content {
+    flex-direction: column;
+  }
+
+  .stylist-header {
+    align-items: normal;
+    margin: 1% 0;
+  }
+
+  .stylist-container {
+    height: fit-content;
+    width: 90%;
+  }
+
+  .stylist-company-image {
+    width: 50%;
+  }
+
+  .stylist-info-container > article {
+    margin-left: 0;
+  }
+
+  .reviews {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}

@@ -4,7 +4,7 @@
   height: 25%;
   margin: 2% 0;
   border-radius: 5px;
-  width: 85%;
+  width: 75%;
 }
 
 .search-result-header {
@@ -69,10 +69,22 @@ h3 {
   }
 
   .specific-search-result {
+    width: 95%;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  /* .company-image {
+    width: 20%;
+  } */
+  .star-rating {
+    margin: 2% auto;
+  }
+
+  .specific-search-result {
     width: 100%;
   }
 }
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
   /* .company-image {
     width: 20%;
   } */
@@ -81,19 +93,7 @@ h3 {
   }
 
   .specific-search-result {
-    width: min-content;
-  }
-}
-@media only screen and (min-width: 768px) {
-  /* .company-image {
-    width: 20%;
-  } */
-  .star-rating {
-    margin: 2% auto;
-  }
-
-  .specific-search-result {
-    width: min-content;
+    width: 100%;
   }
 }
 
@@ -105,7 +105,7 @@ h3 {
     margin: 2% auto;
   }
 
-  .specific-search-result {
+  /* .specific-search-result {
     width: min-content;
-  }
+  } */
 }
