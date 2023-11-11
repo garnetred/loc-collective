@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import "./ContactForm.css";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import './ContactForm.css';
 
 const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
     const { name } = e.target;
-    if (name === "name") {
+    if (name === 'name') {
       setName(e.target.value);
     }
-    if (name === "email") {
+    if (name === 'email') {
       setEmail(e.target.value);
     }
 
-    if (name === "message") {
+    if (name === 'message') {
       setMessage(e.target.value);
     }
   };
 
   const submitForm = (e) => {
     e.preventDefault();
-    alert("your message has been sent successfully");
+    alert('your message has been sent successfully');
     // if (this.state.location !== "" && this.state.style !== "") {
     //   this.props.retrieveSearchResults(this.state);
     //   this.setState({ locationError: false, styleError: false });
@@ -53,7 +53,7 @@ const ContactForm = () => {
         <p className="contact-form-labels">Name:</p>
         <input type="hidden" name="form-name" value="contact-form" />
         <input
-          className="name-input"
+          className="name-input form-input-field"
           type="text"
           placeholder="name"
           name="name"
@@ -64,7 +64,7 @@ const ContactForm = () => {
         />
         <p className="contact-form-labels">Email:</p>
         <input
-          className="email-input"
+          className="email-input form-input-field"
           type="text"
           placeholder="email"
           name="email"
@@ -75,7 +75,7 @@ const ContactForm = () => {
         />
         <p className="contact-form-labels">Comments:</p>
         <textarea
-          className="message-input"
+          className="message-input form-input-field"
           type="textarea"
           placeholder="message"
           name="message"

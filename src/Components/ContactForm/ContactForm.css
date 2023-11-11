@@ -2,7 +2,7 @@
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
-  width: 500px;
+  width: 60%;
 }
 
 .contact-form-labels {
@@ -25,6 +25,10 @@
   margin: 10% 0;
 }
 
+.form-input-field {
+  border: 2px solid gray;
+}
+
 .name-input,
 .message-input,
 .email-input {
@@ -33,4 +37,25 @@
 
 .message-input {
   height: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .contact-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .contact-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
 }
