@@ -48,37 +48,46 @@ const App = () => {
 
   return (
     <section className="App">
-      <Header />
-      <Switch>
-        <Route path="/about" render={() => <About />} />
-        <Route path="/styles" render={() => <Styles />} />
-        <Route path="/contact" render={() => <ContactForm />} />
-        <Route
-          path="/stylist/:id"
-          render={({ match }) => {
-            const { id } = match.params;
-            return <StylistPage id={id} />;
-          }}
-        />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <>
-              <SearchForm
-                retrieveSearchResults={retrieveSearchResults}
-                setIsLoading={setIsLoading}
-              />
-              <SearchResultsContainer
-                results={results}
-                style={style}
-                isLoading={isLoading}
-              />
-            </>
-          )}
-        ></Route>
-      </Switch>
-      <Footer />
+      {!isModalOpen && (
+        <React.Fragment>
+          <Header />
+          <Switch>
+            <Route path="/about" render={() => <About />} />
+            <Route path="/styles" render={() => <Styles />} />
+            <Route path="/contact" render={() => <ContactForm />} />
+            <Route
+              path="/stylist/:id"
+              render={({ match }) => {
+                const { id } = match.params;
+                return <StylistPage id={id} />;
+              }}
+            />
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <>
+                  <SearchForm
+                    retrieveSearchResults={retrieveSearchResults}
+                    setIsLoading={setIsLoading}
+                  />
+                  <SearchResultsContainer
+                    results={results}
+                    style={style}
+                    isLoading={isLoading}
+                  />
+                </>
+              )}
+            ></Route>
+          </Switch>
+          <Footer />
+        </React.Fragment>
+      )}
+      {isModalOpen && (
+        <React.Fragment>
+          <Modal />
+        </React.Fragment>
+      )}
     </section>
   );
 };
