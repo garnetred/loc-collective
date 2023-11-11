@@ -70,6 +70,7 @@ const SearchForm = (props) => {
           data-testid="select"
           onChange={(e) => handleChange(e)}
           aria-label="style"
+          className="search-form-input"
         >
           <option value="" selected disabled>
             -- Please select a style --{' '}
@@ -82,7 +83,7 @@ const SearchForm = (props) => {
           <option value="faux locs">faux locs</option>
         </select>
         <input
-          className="location-input"
+          className="location-input search-form-input"
           type="text"
           placeholder="location"
           name="location"
@@ -93,7 +94,7 @@ const SearchForm = (props) => {
         />
         <button
           type="submit"
-          className="search-form-button"
+          className="search-form-button search-form-input"
           onClick={submitForm}
         >
           search

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 .search-form-container {
   height: 65%;
@@ -41,13 +41,13 @@
 }
 
 .text-container > h2 {
-  font-family: "Didact Gothic", sans-serif;
+  font-family: 'Didact Gothic', sans-serif;
 
   font-weight: 800;
 }
 
 .search-form {
-  width: 40%;
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,4 +83,82 @@
 
 .form-error-message {
   color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .background-image-container {
+    height: 60%;
+  }
+  .search-form {
+    flex-direction: column;
+    width: 75%;
+    align-items: normal;
+  }
+
+  .text-container {
+    left: 0;
+    font-size: 0.5rem;
+    width: 100%;
+  }
+
+  .search-form-input {
+    margin: 1% 0;
+  }
+
+  .search-form-button {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .search-form {
+    flex-direction: column;
+    width: 35%;
+    align-items: normal;
+  }
+
+  .background-image-container {
+    height: 60%;
+  }
+
+  .search-form-button {
+    width: 50%;
+  }
+
+  .search-form-input {
+    margin: 1% 0;
+  }
+
+  .text-container {
+    width: 100%;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .search-form {
+    flex-direction: column;
+    width: 35%;
+    align-items: normal;
+  }
+
+  .background-image-container {
+    height: 60%;
+  }
+
+  .search-form-container {
+    height: 50%;
+  }
+
+  .search-form-button {
+    width: 50%;
+  }
+
+  .search-form-input {
+    margin: 1% 0;
+  }
+
+  .text-container {
+    width: 100%;
+    left: 0;
+  }
 }
