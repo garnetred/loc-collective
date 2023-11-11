@@ -51,6 +51,11 @@ a {
     display: none;
   }
 
+  .header-hamburger {
+    display: flex;
+    margin: 0 2%;
+  }
+
   .loc-collective {
     margin: 0;
     padding-left: 1%;
@@ -67,6 +72,11 @@ a {
 
   .header-link-container {
     display: none;
+  }
+
+  .header-hamburger {
+    display: flex;
+    margin: 0 2%;
   }
 
   .loc-collective {
@@ -89,6 +99,10 @@ a {
     width: 35%;
   }
 
+  .header-hamburger {
+    display: none;
+  }
+
   .loc-collective {
     margin: 0;
     padding-left: 1%;
@@ -109,6 +123,10 @@ a {
     width: 25%;
   }
 
+  .header-hamburger {
+    display: none;
+  }
+
   .loc-collective {
     margin: 0;
   }
@@ -117,5 +135,9 @@ a {
 @media only screen and (min-width: 1200px) {
   .header-link-container {
     display: flex;
+  }
+
+  .header-hamburger {
+    display: none;
   }
 }

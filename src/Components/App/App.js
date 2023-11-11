@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
+import Modal from '../Modal/Modal';
 import Footer from '../Footer/Footer';
 import SearchForm from '../SearchForm/SearchForm';
 import SearchResultsContainer from '../SearchResultsContainer/SearchResultsContainer';
@@ -16,6 +17,15 @@ const App = () => {
   const [results, setResults] = useState([]);
   const [location, setLocation] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
   const retrieveSearchResults = async (searchOptions) => {
     getSearchResults(searchOptions).then((response) => {
