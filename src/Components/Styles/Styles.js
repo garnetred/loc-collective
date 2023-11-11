@@ -156,8 +156,7 @@ const Styles = () => {
           Permanent loc extensions are extensions added to the end of someone's
           hair to increase the length of their locs. Typically they are made
           with human hair. Some people get permanent loc extensions while their
-          natural hair is short and cut the loc extensions as their hair grows
-          out.
+          natural hair is short and cut the loc extensions as their hair grows.
         </p>
       </section>
       <h3 className="style-header">Ready to Get Started?</h3>
