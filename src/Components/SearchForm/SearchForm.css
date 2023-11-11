@@ -145,6 +145,10 @@
     height: 60%;
   }
 
+  .search-form-container {
+    height: 50%;
+  }
+
   .search-form-button {
     width: 50%;
   }

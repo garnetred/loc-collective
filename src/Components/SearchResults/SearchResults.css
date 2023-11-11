@@ -7,42 +7,88 @@
 }
 
 .search-result-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .name-and-rating {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
 }
 
 .star-rating {
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .search-results-content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .company-image {
-    height: 150px;
-    width: 200px;
-    background-color: gray;
-    margin: 0;
-    object-fit: cover;
+  height: 150px;
+  width: 200px;
+  background-color: gray;
+  margin: 0;
+  object-fit: cover;
 }
 
 .search-results-content > article {
-    margin-left: 3%;
+  margin-left: 3%;
 }
 
 h3 {
-    color: black;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  /* .company-image {
+    width: 20%;
+  } */
+
+  .search-results-header {
+    flex-direction: column;
+  }
+  .name-and-rating {
+    flex-direction: column;
+  }
+
+  .star-rating {
+    margin: 2% auto;
+  }
+
+  .search-results-content {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 601px) {
+  /* .company-image {
+    width: 20%;
+  } */
+  .star-rating {
+    margin: 2% auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* .company-image {
+    width: 20%;
+  } */
+  .star-rating {
+    margin: 2% auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* .company-image {
+    width: 20%;
+  } */
+  .star-rating {
+    margin: 2% auto;
+  }
 }
