@@ -143,9 +143,21 @@ const Styles = () => {
           </figcaption>
         </figure>
         <p className="style-paragraph">
-          Faux loc hair extensions that look like locs. They often look like
-          traditional locs, but have a shinier appearance. This can be a good
-          way to test out locs without making the commitment.
+          Faux locs are hair extensions that look like locs. They often look
+          like traditional locs, but have a shinier appearance. This can be a
+          good way to test out locs without making the commitment. There are
+          different types of faux locs such as goddess locs, butterfly locs,
+          etc.
+        </p>
+      </section>
+      <h3 className="style-header">Permanent Loc Extensions</h3>
+      <section className="style-info">
+        <p className="style-paragraph">
+          Permanent loc extensions are extensions added to the end of someone's
+          hair to increase the length of their locs. Typically they are made
+          with human hair. Some people get permanent loc extensions while their
+          natural hair is short and cut the loc extensions as their hair grows
+          out.
         </p>
       </section>
       <h3 className="style-header">Ready to Get Started?</h3>

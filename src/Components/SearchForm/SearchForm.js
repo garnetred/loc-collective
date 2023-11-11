@@ -81,6 +81,7 @@ const SearchForm = (props) => {
           <option value="interlocks+sisterlocks">interlocks</option>
           <option value="microlocs">microlocs</option>
           <option value="faux locs">faux locs</option>
+          <option value="loc+extensions">permanent loc extensions</option>
         </select>
         <input
           className="location-input search-form-input"
