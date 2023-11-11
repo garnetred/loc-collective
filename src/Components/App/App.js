@@ -19,14 +19,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
   const retrieveSearchResults = async (searchOptions) => {
     getSearchResults(searchOptions).then((response) => {
       try {
