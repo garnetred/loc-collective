@@ -12,3 +12,24 @@
 .about-link:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 600px) {
+  .about-section {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .about-section {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .about-section {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}
