@@ -50,7 +50,7 @@ const App = () => {
     <section className="App">
       {!isModalOpen && (
         <React.Fragment>
-          <Header />
+          <Header setIsModalOpen={setIsModalOpen} />
           <Switch>
             <Route path="/about" render={() => <About />} />
             <Route path="/styles" render={() => <Styles />} />
@@ -85,7 +85,7 @@ const App = () => {
       )}
       {isModalOpen && (
         <React.Fragment>
-          <Modal />
+          <Modal setIsModalOpen={setIsModalOpen} />
         </React.Fragment>
       )}
     </section>

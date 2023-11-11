@@ -5,18 +5,6 @@ import './SearchResultsContainer.css';
 import SearchResults from '../SearchResults/SearchResults';
 
 const SearchResultsContainer = (props) => {
-  //need to create a checked function that sorts by only one functionality at a time
-  // now this needs state to see what has been checked, I would think?
-  // or just an event to see if something has been checked?
-  // might want to add disabled attribute or something to the others ones?
-
-  const onCheck = (e) => {
-    //runs when first checkbox is clicked
-    //should uncheck the other checkboxes
-    // should just update state, maybe?
-    // will then add a sort to the allSearchResults
-  };
-
   const allSearchResults = props.results.map((salon) => {
     return (
       <SearchResults

@@ -3,7 +3,11 @@ import { ReactComponent as Hamburger } from '../../icons/hamburger-icon.svg';
 import { NavLink, Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+const Header = (props) => {
+  const openModal = () => {
+    props.setIsModalOpen(true);
+  };
+
   return (
     <nav>
       <Link className="loc-collective" to="/">
@@ -21,7 +25,7 @@ const Header = () => {
         </NavLink>
       </section>
       <section className="header-hamburger">
-        <Hamburger />
+        <Hamburger onClick={openModal} />
       </section>
     </nav>
   );
