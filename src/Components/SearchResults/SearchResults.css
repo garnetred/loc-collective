@@ -4,6 +4,7 @@
   height: 25%;
   margin: 2% 0;
   border-radius: 5px;
+  width: 85%;
 }
 
 .search-result-header {
@@ -66,6 +67,10 @@ h3 {
   .search-results-content {
     flex-direction: column;
   }
+
+  .specific-search-result {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 601px) {
   /* .company-image {
@@ -73,6 +78,10 @@ h3 {
   } */
   .star-rating {
     margin: 2% auto;
+  }
+
+  .specific-search-result {
+    width: min-content;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -82,6 +91,10 @@ h3 {
   .star-rating {
     margin: 2% auto;
   }
+
+  .specific-search-result {
+    width: min-content;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -90,5 +103,9 @@ h3 {
   } */
   .star-rating {
     margin: 2% auto;
+  }
+
+  .specific-search-result {
+    width: min-content;
   }
 }

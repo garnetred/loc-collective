@@ -44,7 +44,7 @@
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 601px) and (max-width: 767px) {
   .search-results-container {
     width: 100%;
   }
@@ -58,7 +58,7 @@
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
   .search-results-container {
     width: 100%;
   }
