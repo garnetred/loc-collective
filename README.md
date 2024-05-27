@@ -28,4 +28,4 @@ https://github.com/garnetred/loc-collective/assets/59572865/e264ab05-0b24-4df9-b
 
 
 ## Deployed Site
-I've deployed the site via Netlify using continuous deployment. You can view the current site [here](https://loccollective.com). The [backend node server](https://github.com/garnetred/loc-collective-backend) is deployed continuously using Render.
+I've deployed the site via Netlify using continuous deployment. You can view the current site [here]([https://loccollective.com](https://loccollective.netlify.app/)). The [backend node server](https://github.com/garnetred/loc-collective-backend) is deployed continuously using Render.
