@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "jsdom": "^16.7.0",
     "mutationobserver-shim": "^0.3.7",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
